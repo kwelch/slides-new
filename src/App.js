@@ -1,10 +1,5 @@
 import React, { Component } from 'react';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Redirect,
-} from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import MMC_ComponentSlides from './presentations/mcc-component-driven-design';
 import SCS_ComponentSlides from './presentations/scs-state-react-styling';
 

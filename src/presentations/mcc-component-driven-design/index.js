@@ -1,11 +1,9 @@
-// Import React
+/* eslint-disable jsx-a11y/accessible-emoji */
 import React from 'react';
 
 // Import Spectacle Core tags
 import {
   Appear,
-  Markdown,
-  SlideSet,
   CodePane,
   Deck,
   Image,
@@ -13,7 +11,6 @@ import {
   ListItem,
   List,
   Slide,
-  Interactive,
   Text,
   Layout,
   Fill,
