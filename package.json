@@ -2,6 +2,7 @@
   "name": "slides-new",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://kwelch.github.io/slides-new",
   "dependencies": {
     "react": "^15.3.2",
     "react-dom": "^15.3.2",

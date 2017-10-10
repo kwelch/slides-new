@@ -16,7 +16,23 @@ class App extends Component {
           <Route
             path="/"
             exact
-            render={() => <Redirect to="/mcc-component-design" />}
+            render={() => (
+              <div>
+                <h1>Talks List</h1>
+                <ul>
+                  <li>
+                    <Link to="/scs-state-react-styling">
+                      Scenic City Summit - State of React Styling
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/mcc-component-design">
+                      Music City Code - Component Based Styling
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+            )}
           />
           <Route
             path="/scs-state-react-styling"
