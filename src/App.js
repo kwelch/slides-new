@@ -6,6 +6,7 @@ import {
   Redirect,
 } from 'react-router-dom';
 import MMC_ComponentSlides from './presentations/mcc-component-driven-design';
+import SCS_ComponentSlides from './presentations/scs-state-react-styling';
 
 class App extends Component {
   render() {
@@ -16,6 +17,10 @@ class App extends Component {
             path="/"
             exact
             render={() => <Redirect to="/mcc-component-design" />}
+          />
+          <Route
+            path="/scs-state-react-styling"
+            component={SCS_ComponentSlides}
           />
           <Route path="/mcc-component-design" component={MMC_ComponentSlides} />
           <Route render={() => <h2>Presentation Not Found</h2>} />
