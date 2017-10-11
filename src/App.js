@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import MMC_ComponentSlides from './presentations/mcc-component-driven-design';
 import SCS_ComponentSlides from './presentations/scs-state-react-styling';
+import DS_GS_ComponentSlides from './presentations/ds-getting-specific';
 
 class App extends Component {
   render() {
@@ -13,6 +14,10 @@ class App extends Component {
             component={SCS_ComponentSlides}
           />
           <Route path="/mcc-component-design" component={MMC_ComponentSlides} />
+          <Route
+            path="/ds-getting-specific"
+            component={DS_GS_ComponentSlides}
+          />
           <Route
             render={() => (
               <div>
