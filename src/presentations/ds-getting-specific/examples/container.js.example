@@ -1,0 +1,19 @@
+render() {
+  return (<Form>
+    <Title>Contact Us</Title>
+    {/* TODO: Show error summary section */}
+    <Input label="Name" isRequired placeholder="John Doe"
+      value={this.state.name} error={errors.name}
+    />
+    <Input label="Phone" placeholder="555-555-5555"
+      value={this.state.phone} error={errors.phone}
+    />
+    <Input label="Email" placeholder="example@email.com"
+      value={this.state.email} error={errors.email}
+    />
+    <Input label="Comments" isRequired multiline
+      value={this.state.comments} error={errors.comments}
+    />
+    <Button label="Submit" onClick={this.submit} />
+  </Form>);
+}
