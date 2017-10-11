@@ -33,6 +33,11 @@ class App extends Component {
                       Music City Code - Component Based Styling
                     </Link>
                   </li>
+                  <li>
+                    <Link to="/ds-getting-specific">
+                      DevSpaceConf - Getting Specific: Component Based Styling
+                    </Link>
+                  </li>
                 </ul>
               </div>
             )}
