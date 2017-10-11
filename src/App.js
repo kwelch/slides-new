@@ -1,5 +1,11 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  Redirect,
+} from 'react-router-dom';
 import MMC_ComponentSlides from './presentations/mcc-component-driven-design';
 import SCS_ComponentSlides from './presentations/scs-state-react-styling';
 import DS_GS_ComponentSlides from './presentations/ds-getting-specific';
@@ -12,6 +18,10 @@ class App extends Component {
           <Route
             path="/scs-state-react-styling"
             component={SCS_ComponentSlides}
+          />
+          <Route
+            path="/state-react-styling"
+            render={() => <Redirect to="/scs-state-react-styling" />}
           />
           <Route path="/mcc-component-design" component={MMC_ComponentSlides} />
           <Route
