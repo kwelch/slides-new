@@ -9,8 +9,11 @@ class App extends Component {
       <Router>
         <Switch>
           <Route
-            path="/"
-            exact
+            path="/scs-state-react-styling"
+            component={SCS_ComponentSlides}
+          />
+          <Route path="/mcc-component-design" component={MMC_ComponentSlides} />
+          <Route
             render={() => (
               <div>
                 <h1>Talks List</h1>
@@ -29,12 +32,6 @@ class App extends Component {
               </div>
             )}
           />
-          <Route
-            path="/scs-state-react-styling"
-            component={SCS_ComponentSlides}
-          />
-          <Route path="/mcc-component-design" component={MMC_ComponentSlides} />
-          <Route render={() => <h2>Presentation Not Found</h2>} />
         </Switch>
       </Router>
     );
