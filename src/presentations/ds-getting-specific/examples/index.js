@@ -230,13 +230,13 @@ render(<ContactForm {...state} />, mountNode);`,
   const Input = styled(TextInput)\`
     display:flex;
     padding: .5rem;
-    
+
     \${({error}) => (error && css\`& \${TextAreaStyled} {
       border: 2px solid red;
     }
     & \${InputStyled} {
       border-bottom: 2px solid red;
-    }\)}
+    })}
 
     \${({multiline}) => (multiline && 'flex-direction:column;')}
   \`;`,
