@@ -138,23 +138,33 @@ const state = {
 };
 
 render(<ContactForm {...state} />, mountNode);`,
-  glamorous: `const Container = glamorous.div(
-    {
-      fontFamily: "'Press Start 2P', cursive",
-      padding: '2rem',
-      color: 'white',
-      border: '2px solid white',
-      boxShadow: '5px 5px 0px  black',
-      ':hover': {
-        backgroundColor: '#334f99',
+  glamorous: `const TextInput = ({ label, isRequired,
+    multiline = false, error, className, ...props }) => {
+    const inputProps = {label, ...props};
+    return (<label className={className}>
+      <Span width="150px">
+        {label}:
+        {isRequired && <Span fontSize='.8rem' color='red'>*</Span>}
+      </Span>
+      {!multiline
+          ? <InputStyled {...inputProps} />
+          : <TextAreaStyled {...inputProps} />
       }
+    </label>);
+  };
+  
+  const TextInputStyled = glamorous(TextInput)({
+    display: 'flex',
+    padding: '.5rem',
+  }, ({error, multiline}) => ({
+    '& textarea': {
+      border: error && '2px solid red'
     },
-    ({ backgroundColor, big, width }) => ({
-      fontSize: big ? '1.75rem' : '1.2rem',
-      backgroundColor: backgroundColor || '#f2621c',
-      width
-    })
-  );`,
+    '& input': {
+      borderBottom: error && '2px solid red'
+    },
+    flexDirection: (multiline ? 'column': 'row')
+  }));`,
   aphrodite: `const styles = StyleSheet.create({
     container: {
       fontFamily: "'Press Start 2P', cursive",
@@ -201,17 +211,33 @@ render(<ContactForm {...state} />, mountNode);`,
       <Button label="Submit" onClick={this.submit} />
     </Form>);
   }`,
-  styleComponents: `const Container = styled.div\`
-  font-family: 'Press Start 2P', cursive;
-  padding: 2rem;
-  color: white;
-  border: 2px solid white;
-  box-shadow: 5px 5px 0 black;
-  font-size: \${props => props.big ? '1.75rem' : '1.2rem'};
-  background-color: \${props => props.backgroundColor || '#f2621c'};
-  width: \${props => props.width};
-  &:hover {
-    background-color: #334f99;
-  }
-\`;`,
+  styleComponents: `
+  const TextInput = ({ label, isRequired,
+    multiline = false, error, className, ...props }) => {
+    const inputProps = {label, ...props};
+    return (<label className={className}>
+      <Label>
+        {label}:
+        {isRequired && <Required>*</Required>}
+      </Label>
+      {!multiline
+          ? <InputStyled {...inputProps} />
+          : <TextAreaStyled {...inputProps} />
+      }
+    </label>);
+  };
+
+  const Input = styled(TextInput)\`
+    display:flex;
+    padding: .5rem;
+    
+    \${({error}) => (error && css\`& \${TextAreaStyled} {
+      border: 2px solid red;
+    }
+    & \${InputStyled} {
+      border-bottom: 2px solid red;
+    }\)}
+
+    \${({multiline}) => (multiline && 'flex-direction:column;')}
+  \`;`,
 };

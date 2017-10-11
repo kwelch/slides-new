@@ -50,22 +50,6 @@ const images = {
   eyes: require('./assets/eyes.png'),
 };
 
-// cannot use raw-loader with create-react-app
-// const examples = {
-//   OGCss: require("raw-loader!./examples/old-school.css.example"),
-//   BEM: require("raw-loader!./examples/bem.css.example"),
-//   Sass: require("raw-loader!./examples/sass.example"),
-//   cssModules: {
-//     style: require("raw-loader!./examples/cssmodules/style.css.example"),
-//     style2: require("raw-loader!./examples/cssmodules/style-2.css.example"),
-//   },
-//   react: require("raw-loader!./examples/react.js.example"),
-//   glamorous: require("raw-loader!./examples/glamorous.js.example"),
-//   aphrodite: require("raw-loader!./examples/aphrodite.js.example"),
-//   container: require("raw-loader!./examples/container.js.example"),
-//   styleComponents: require("raw-loader!./examples/styled-components.js.example"),
-// };
-
 preloader(images);
 
 const theme = createTheme(
@@ -86,11 +70,13 @@ const SmallListItem = ({ style, ...rest }) => (
   <ListItem {...rest} style={{ ...style, fontSize: '1.75rem' }} />
 );
 
-const AppearList = ({ items, textColor, textSize, style }) => (
+const AppearList = ({ items, textColor, textSize = 42, style }) => (
   <List textColor={textColor} style={{ listStyleType: 'none', ...style }}>
     {items.map((val, i) => (
       <Appear key={i}>
-        <ListItem style={{ fontSize: textSize }}>- {val}</ListItem>
+        <ListItem style={{ fontSize: textSize, margin: '.5rem' }}>
+          - {val}
+        </ListItem>
       </Appear>
     ))}
   </List>
@@ -120,16 +106,9 @@ export default class Presentation extends React.Component {
         theme={theme}
         progress="pacman"
       >
-        <Slide
-          transition={['zoom']}
-          style={{
-            backgroundColor: '#f9f9f9',
-            backgroundRepeat: 'no-repeat',
-            backgroundPosition: 'center center',
-            backgroundSize: 'contain',
-            backgroundImage: `url(${images.intro})`,
-          }}
-        />
+        <Slide transition={['zoom']}>
+          <Heading>Getting Specific</Heading>
+        </Slide>
         <Slide
           transition={['slide']}
           style={{
@@ -436,6 +415,16 @@ export default class Presentation extends React.Component {
           <Heading>Helpful Tools</Heading>
           <AppearList
             items={[
+              <Text style={{ display: 'inline' }}>
+                <Link
+                  textColor="secondary"
+                  href="https://css-in-js-playground.com/"
+                >
+                  css-in-js Playground
+                </Link>{' '}
+                by{' '}
+                <Link href="https://twitter.com/SchauDustin">Dustin Schau</Link>
+              </Text>,
               <Link textColor="secondary" href="http://postcss.org/">
                 PostCSS (Autoprefixer)
               </Link>,
@@ -482,13 +471,13 @@ export default class Presentation extends React.Component {
             Kyle Welch
           </Text>
           <Link
-            href="http://bit.ly/state-react-styling"
+            href="http://bit.ly/ds-getting-specific"
             margin=".5rem 0 0"
             textColor="tertiary"
             size={0.75}
             italic
           >
-            http://bit.ly/state-react-styling
+            http://bit.ly/ds-getting-specific
           </Link>
           <Layout style={{ marginTop: 100, justifyContent: 'space-between' }}>
             <Fill>
