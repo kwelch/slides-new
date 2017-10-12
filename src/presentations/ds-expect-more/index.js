@@ -30,7 +30,6 @@ require('spectacle/lib/themes/default/index.css');
 
 const images = {
   about: require('./assets/about-me.png'),
-  eyes: require('./assets/eyes.png'),
   twitterLogo: require('./assets/twitter-logo.svg'),
   githubLogo: require('./assets/GitHub-Mark-120px-plus.png'),
 };
