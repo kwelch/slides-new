@@ -8,6 +8,7 @@ import {
 } from 'react-router-dom';
 import MMC_ComponentSlides from './presentations/mcc-component-driven-design';
 import SCS_ComponentSlides from './presentations/scs-state-react-styling';
+import DS_EM_ComponentSlides from './presentations/ds-expect-more';
 import DS_GS_ComponentSlides from './presentations/ds-getting-specific';
 
 class App extends Component {
@@ -24,6 +25,7 @@ class App extends Component {
             render={() => <Redirect to="/scs-state-react-styling" />}
           />
           <Route path="/mcc-component-design" component={MMC_ComponentSlides} />
+          <Route path="/ds-expect-more" component={DS_EM_ComponentSlides} />
           <Route
             path="/ds-getting-specific"
             component={DS_GS_ComponentSlides}
@@ -41,6 +43,12 @@ class App extends Component {
                   <li>
                     <Link to="/mcc-component-design">
                       Music City Code - Component Based Styling
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/ds-expect-more">
+                      DevSpaceConf - Expect More: Getting Started with
+                      JavaScript Testing
                     </Link>
                   </li>
                   <li>
