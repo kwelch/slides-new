@@ -12,7 +12,11 @@ import {
   Layout,
   Link,
   Text,
+  Notes,
+  Appear,
 } from 'spectacle';
+
+import AppearList from '../../components/AppearList';
 
 // Import image preloader util
 import preloader from 'spectacle/lib/utils/preloader';
@@ -26,6 +30,7 @@ require('spectacle/lib/themes/default/index.css');
 
 const images = {
   about: require('./assets/about-me.png'),
+  eyes: require('./assets/eyes.png'),
   twitterLogo: require('./assets/twitter-logo.svg'),
   githubLogo: require('./assets/GitHub-Mark-120px-plus.png'),
 };
@@ -55,6 +60,9 @@ export default class Presentation extends React.Component {
         theme={theme}
         progress="pacman"
       >
+        <Slide transition={['zoom']}>
+          <Heading>Expect More</Heading>
+        </Slide>
         <Slide
           transition={['slide']}
           style={{
@@ -65,6 +73,91 @@ export default class Presentation extends React.Component {
             backgroundImage: `url(${images.about})`,
           }}
         />
+        <Slide transition={['fade']} bgColor="primary">
+          <Notes>
+            <ul>
+              <li />
+            </ul>
+          </Notes>
+          <Heading fit textColor="tertiary">
+            What is this talk?
+          </Heading>
+          <AppearList
+            items={[
+              'Knowledge to get started',
+              'Adding testing to your flow',
+              'Excited about testing',
+            ]}
+          />
+        </Slide>
+        <Slide>
+          <Heading>Shameless Plug</Heading>
+          <Appear>
+            <div>
+              <Text>Exercises</Text>
+              <Text>
+                <Link
+                  textColor="tertiary"
+                  href="https://github.com/NashReact/jest-exercises"
+                >
+                  github.com/NashReact/jest-exercises
+                </Link>
+              </Text>
+            </div>
+          </Appear>
+        </Slide>
+        <Slide>
+          <Heading>Setup</Heading>
+          <AppearList
+            items={['npm install --save-dev jest-cli', '"test": "jest"']}
+          />
+        </Slide>
+        <Slide>
+          <Heading style={{ lineHeight: '10rem' }}>
+            Delightful JavaScript Testing
+          </Heading>
+          <Notes>
+            <ul>
+              <li>All in one</li>
+              <li>Spy</li>
+              <li>Coverage</li>
+              <li>assertions</li>
+              <li>watch mode</li>
+            </ul>
+          </Notes>
+        </Slide>
+
+        <Slide>
+          <Heading>Time</Heading>
+        </Slide>
+
+        <Slide>
+          <Layout>
+            <Fill>
+              <Appear>
+                <div>
+                  <Text>Coverage</Text>
+                </div>
+              </Appear>
+            </Fill>
+            <Fill>
+              <Appear>
+                <div>
+                  <Text>Importance</Text>
+                </div>
+              </Appear>
+            </Fill>
+          </Layout>
+        </Slide>
+
+        <Slide>
+          <Heading>Exciting Stuff</Heading>
+        </Slide>
+
+        <Slide>
+          <Heading>Only one area of Testing</Heading>
+        </Slide>
+
         <Slide transition={['zoom']} bgColor="primary">
           <Heading size={1} fit caps lineHeight={1} textColor="secondary">
             Thank You!
@@ -73,13 +166,13 @@ export default class Presentation extends React.Component {
             Kyle Welch
           </Text>
           <Link
-            href="http://bit.ly/state-react-styling"
+            href="http://bit.ly/ds-expect-more"
             margin=".5rem 0 0"
             textColor="tertiary"
             size={0.75}
             italic
           >
-            http://bit.ly/state-react-styling
+            http://bit.ly/ds-expect-more
           </Link>
           <Layout style={{ marginTop: 100, justifyContent: 'space-between' }}>
             <Fill>

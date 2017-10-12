@@ -243,16 +243,20 @@ export default class Presentation extends React.Component {
             code={examples.react}
           />
         </Slide>
-        <Slide
-          transition={['spin']}
-          bgColor="codePaneBg"
-          notes={`<ul>
-          <li>allow you to turn your stylesheet into an object of class names</li>
-          <li>styleshet can be css, less, sass</li>
-          <li>Processed with webpack or browserify, generates scoped class names</li>
-          <li>Explicit dependencies</li>
-          </ul>`}
-        >
+        <Slide transition={['spin']} bgColor="codePaneBg">
+          <Notes>
+            <ul>
+              <li>
+                allow you to turn your stylesheet into an object of class names
+              </li>
+              <li>styleshet can be css, less, sass</li>
+              <li>
+                Processed with webpack or browserify, generates scoped class
+                names
+              </li>
+              <li>Explicit dependencies</li>
+            </ul>
+          </Notes>
           <Image src={images.cssModulesLogo} width={200} />
           <Text textColor="primary">style.css</Text>
           <Layout>
