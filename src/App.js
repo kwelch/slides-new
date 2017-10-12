@@ -1,8 +1,15 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  Redirect,
+} from 'react-router-dom';
 import MMC_ComponentSlides from './presentations/mcc-component-driven-design';
 import SCS_ComponentSlides from './presentations/scs-state-react-styling';
 import DS_EM_ComponentSlides from './presentations/ds-expect-more';
+import DS_GS_ComponentSlides from './presentations/ds-getting-specific';
 
 class App extends Component {
   render() {
@@ -13,8 +20,16 @@ class App extends Component {
             path="/scs-state-react-styling"
             component={SCS_ComponentSlides}
           />
+          <Route
+            path="/state-react-styling"
+            render={() => <Redirect to="/scs-state-react-styling" />}
+          />
           <Route path="/mcc-component-design" component={MMC_ComponentSlides} />
           <Route path="/ds-expect-more" component={DS_EM_ComponentSlides} />
+          <Route
+            path="/ds-getting-specific"
+            component={DS_GS_ComponentSlides}
+          />
           <Route
             render={() => (
               <div>
@@ -34,6 +49,11 @@ class App extends Component {
                     <Link to="/ds-expect-more">
                       DevSpaceConf - Expect More: Getting Started with
                       JavaScript Testing
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/ds-getting-specific">
+                      DevSpaceConf - Getting Specific: Component Based Styling
                     </Link>
                   </li>
                 </ul>
