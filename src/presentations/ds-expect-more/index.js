@@ -87,6 +87,16 @@ export default class Presentation extends React.Component {
             backgroundImage: `url(${images.about})`,
           }}
         />
+        <Slide
+          transition={['slide']}
+          style={{
+            backgroundColor: '#f9f9f9',
+            backgroundRepeat: 'no-repeat',
+            backgroundPosition: 'center center',
+            backgroundSize: 'contain',
+            backgroundImage: `url(${images.sponsors})`,
+          }}
+        />
         <Slide transition={['fade']} bgColor="tertiary">
           <Notes>
             <ul>
