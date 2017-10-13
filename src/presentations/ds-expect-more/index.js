@@ -90,22 +90,6 @@ export default class Presentation extends React.Component {
           />
         </Slide>
         <Slide>
-          <Heading>Shameless Plug</Heading>
-          <Appear>
-            <div>
-              <Text>Exercises</Text>
-              <Text>
-                <Link
-                  textColor="tertiary"
-                  href="https://github.com/NashReact/jest-exercises"
-                >
-                  github.com/NashReact/jest-exercises
-                </Link>
-              </Text>
-            </div>
-          </Appear>
-        </Slide>
-        <Slide>
           <Heading>Setup</Heading>
           <AppearList
             items={['npm install --save-dev jest-cli', '"test": "jest"']}
@@ -124,6 +108,22 @@ export default class Presentation extends React.Component {
               <li>watch mode</li>
             </ul>
           </Notes>
+        </Slide>
+        <Slide>
+          <Heading>Shameless Plug</Heading>
+          <Appear>
+            <div>
+              <Text>Exercises</Text>
+              <Text>
+                <Link
+                  textColor="tertiary"
+                  href="https://github.com/NashReact/jest-exercises"
+                >
+                  github.com/NashReact/jest-exercises
+                </Link>
+              </Text>
+            </div>
+          </Appear>
         </Slide>
 
         <Slide>
