@@ -6,10 +6,12 @@ import {
   Link,
   Redirect,
 } from 'react-router-dom';
-import MMC_ComponentSlides from './presentations/mcc-component-driven-design';
-import SCS_ComponentSlides from './presentations/scs-state-react-styling';
+import {
+  MMC_ComponentSlides,
+  SCS_ComponentSlides,
+  DS_GS_ComponentSlides,
+} from './presentations/state-of-styling';
 import DS_EM_ComponentSlides from './presentations/ds-expect-more';
-import DS_GS_ComponentSlides from './presentations/ds-getting-specific';
 
 class App extends Component {
   render() {

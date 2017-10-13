@@ -29,9 +29,16 @@ require('normalize.css');
 require('spectacle/lib/themes/default/index.css');
 
 const images = {
-  about: require('./assets/about-me.png'),
-  twitterLogo: require('./assets/twitter-logo.svg'),
-  githubLogo: require('./assets/GitHub-Mark-120px-plus.png'),
+  about: require('../../assets/about-me.png'),
+  twitterLogo: require('../../assets/twitter-logo.svg'),
+  githubLogo: require('../../assets/GitHub-Mark-120px-plus.png'),
+  sponsors: require('../../assets/ds_sponsors.png'),
+  intro: require('./assets/ds_cover-slide.png'),
+  jest: require('./assets/jest-logo.png'),
+  raincoat: require('./assets/full-coverage.png'),
+  umbrella: require('./assets/top-coverage.png'),
+  plug: require('./assets/plug.png'),
+  lifeUnitTests: require('./assets/life-unit-tests.png'),
 };
 
 preloader(images);
@@ -40,7 +47,7 @@ const theme = createTheme(
   {
     primary: 'white',
     secondary: '#1F2022',
-    tertiary: '#03A9FC',
+    tertiary: '#99424f', //'#03A9FC',
     quartenary: '#CECECE',
     codePaneBg: '#2d2d2d',
   },
@@ -59,9 +66,16 @@ export default class Presentation extends React.Component {
         theme={theme}
         progress="pacman"
       >
-        <Slide transition={['zoom']}>
-          <Heading>Expect More</Heading>
-        </Slide>
+        <Slide
+          transition={['zoom']}
+          style={{
+            backgroundColor: '#f9f9f9',
+            backgroundRepeat: 'no-repeat',
+            backgroundPosition: 'center center',
+            backgroundSize: 'contain',
+            backgroundImage: `url(${images.intro})`,
+          }}
+        />
         <Slide
           transition={['slide']}
           style={{
@@ -72,16 +86,17 @@ export default class Presentation extends React.Component {
             backgroundImage: `url(${images.about})`,
           }}
         />
-        <Slide transition={['fade']} bgColor="primary">
+        <Slide transition={['fade']} bgColor="tertiary">
           <Notes>
             <ul>
               <li />
             </ul>
           </Notes>
-          <Heading fit textColor="tertiary">
+          <Heading fit textColor="primary">
             What is this talk?
           </Heading>
           <AppearList
+            textColor="primary"
             items={[
               'Knowledge to get started',
               'Adding testing to your flow',
@@ -95,7 +110,12 @@ export default class Presentation extends React.Component {
             items={['npm install --save-dev jest-cli', '"test": "jest"']}
           />
         </Slide>
-        <Slide>
+        <Slide
+          style={{
+            backgroundColor: '#f9f9f9',
+          }}
+        >
+          <Image src={images.jest} height={150} />
           <Heading style={{ lineHeight: '10rem' }}>
             Delightful JavaScript Testing
           </Heading>
@@ -109,8 +129,13 @@ export default class Presentation extends React.Component {
             </ul>
           </Notes>
         </Slide>
-        <Slide>
-          <Heading>Shameless Plug</Heading>
+        <Slide
+          style={{
+            backgroundColor: '#f9f9f9',
+          }}
+        >
+          <Heading>Shameless</Heading>
+          <Image src={images.plug} />
           <Appear>
             <div>
               <Text>Exercises</Text>
@@ -130,19 +155,23 @@ export default class Presentation extends React.Component {
           <Heading>Time</Heading>
         </Slide>
 
-        <Slide>
+        <Slide
+          style={{
+            backgroundColor: '#f9f9f9',
+          }}
+        >
           <Layout>
             <Fill>
               <Appear>
                 <div>
-                  <Text>Coverage</Text>
+                  <Image src={images.raincoat} />
                 </div>
               </Appear>
             </Fill>
             <Fill>
               <Appear>
                 <div>
-                  <Text>Importance</Text>
+                  <Image src={images.umbrella} />
                 </div>
               </Appear>
             </Fill>
@@ -153,9 +182,16 @@ export default class Presentation extends React.Component {
           <Heading>Exciting Stuff</Heading>
         </Slide>
 
-        <Slide>
-          <Heading>Only one area of Testing</Heading>
-        </Slide>
+        <Slide
+          transition={['zoom']}
+          style={{
+            backgroundColor: '#f9f9f9',
+            backgroundRepeat: 'no-repeat',
+            backgroundPosition: 'center center',
+            backgroundSize: 'contain',
+            backgroundImage: `url(${images.lifeUnitTests})`,
+          }}
+        />
 
         <Slide transition={['zoom']} bgColor="primary">
           <Heading size={1} fit caps lineHeight={1} textColor="secondary">
