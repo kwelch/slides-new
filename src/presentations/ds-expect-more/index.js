@@ -39,6 +39,7 @@ const images = {
   umbrella: require('./assets/top-coverage.png'),
   plug: require('./assets/plug.png'),
   lifeUnitTests: require('./assets/life-unit-tests.png'),
+  time: require('./assets/time.jpeg'),
 };
 
 preloader(images);
@@ -151,8 +152,8 @@ export default class Presentation extends React.Component {
           </Appear>
         </Slide>
 
-        <Slide>
-          <Heading>Time</Heading>
+        <Slide bgColor="codePaneBg">
+          <Image src={images.time} />
         </Slide>
 
         <Slide
