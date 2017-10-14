@@ -1,6 +1,7 @@
-export const MMC_ComponentSlides = require('./mcc-component-driven-design');
-export const SCS_ComponentSlides = require('./scs-state-react-styling');
-export const DS_GS_ComponentSlides = require('./ds-getting-specific');
+export const MMC_ComponentSlides = require('./mcc-component-driven-design')
+  .default;
+export const SCS_ComponentSlides = require('./scs-state-react-styling').default;
+export const DS_GS_ComponentSlides = require('./ds-getting-specific').default;
 
 export default {
   MMC_ComponentSlides,

@@ -120,9 +120,16 @@ export default class Presentation extends React.Component {
             backgroundImage: `url(${images.about})`,
           }}
         />
-        <Slide>
-          <Image src={images.sponsors} />
-        </Slide>
+        <Slide
+          transition={['slide']}
+          style={{
+            backgroundColor: '#f9f9f9',
+            backgroundRepeat: 'no-repeat',
+            backgroundPosition: 'center center',
+            backgroundSize: 'contain',
+            backgroundImage: `url(${images.sponsors})`,
+          }}
+        />
         <Slide transition={['fade']} bgColor="primary">
           <Notes>
             <ul>
@@ -420,19 +427,19 @@ export default class Presentation extends React.Component {
           </Link>
         </Slide>
         <Slide>
+          <Heading>
+            <Link textColor="tertiary" href="https://css-in-js-playground.com/">
+              CSS-in-JS Playground
+            </Link>
+          </Heading>
+          <Text>
+            by <Link href="https://twitter.com/SchauDustin">Dustin Schau</Link>
+          </Text>
+        </Slide>
+        <Slide>
           <Heading>Helpful Tools</Heading>
           <AppearList
             items={[
-              <Text style={{ display: 'inline' }}>
-                <Link
-                  textColor="secondary"
-                  href="https://css-in-js-playground.com/"
-                >
-                  css-in-js Playground
-                </Link>{' '}
-                by{' '}
-                <Link href="https://twitter.com/SchauDustin">Dustin Schau</Link>
-              </Text>,
               <Link textColor="secondary" href="http://postcss.org/">
                 PostCSS (Autoprefixer)
               </Link>,
