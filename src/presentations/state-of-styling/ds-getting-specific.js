@@ -39,7 +39,7 @@ const images = {
   twitterLogo: require('../../assets/twitter-logo.svg'),
   githubLogo: require('../../assets/GitHub-Mark-120px-plus.png'),
   sponsors: require('../../assets/ds_sponsors.png'),
-  // intro: require('./assets/ds_gs_intro.png'),
+  intro: require('./assets/ds_gs_intro.png'),
   cssModulesLogo: require('./assets/css-modules-logo-cropped.png'),
   glamorousLogo: require('./assets/glamorous.png'),
   scLogo: require('./assets/styled-components.png'),
@@ -107,9 +107,16 @@ export default class Presentation extends React.Component {
         theme={theme}
         progress="pacman"
       >
-        <Slide transition={['zoom']}>
-          <Heading>Getting Specific</Heading>
-        </Slide>
+        <Slide
+          transition={['slide']}
+          style={{
+            backgroundColor: '#f9f9f9',
+            backgroundRepeat: 'no-repeat',
+            backgroundPosition: 'center -70px',
+            backgroundSize: 'contain',
+            backgroundImage: `url(${images.intro})`,
+          }}
+        />
         <Slide
           transition={['slide']}
           style={{
