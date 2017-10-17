@@ -13,54 +13,60 @@ import {
 } from './presentations/state-of-styling';
 import DS_EM_ComponentSlides from './presentations/ds-expect-more';
 
+const links = {
+  'mcc-component-design': {
+    component: MMC_ComponentSlides,
+    title: 'Music City Code - Component Based Styling',
+  },
+  'scs-state-react-styling': {
+    component: SCS_ComponentSlides,
+    title: 'Scenic City Summit - State of React Styling',
+    redirects: ['state-react-styling'],
+  },
+  'ds-expect-more': {
+    component: DS_EM_ComponentSlides,
+    title:
+      'DevSpaceConf - Expect More: Getting Started with JavaScript Testing',
+  },
+  'ds-getting-specific': {
+    component: DS_GS_ComponentSlides,
+    title: 'DevSpaceConf - Getting Specific: Component Based Styling',
+  },
+};
+
 class App extends Component {
   render() {
     return (
       <Router>
         <Switch>
+          {Object.keys(links).map(key => {
+            const route = links[key];
+            return [
+              <Route key={key} path={`/${key}`} component={route.component} />,
+              ...(route.redirects || []).map(path => (
+                <Route
+                  path={`/${path}`}
+                  render={() => <Redirect to={`/${key}`} />}
+                />
+              )),
+            ];
+          })}
           <Route
-            path="/scs-state-react-styling"
-            component={SCS_ComponentSlides}
-          />
-          <Route
-            path="/state-react-styling"
-            render={() => <Redirect to="/scs-state-react-styling" />}
-          />
-          <Route path="/mcc-component-design" component={MMC_ComponentSlides} />
-          <Route path="/ds-expect-more" component={DS_EM_ComponentSlides} />
-          <Route
-            path="/ds-getting-specific"
-            component={DS_GS_ComponentSlides}
-          />
-          <Route
-            render={() => (
-              <div>
-                <h1>Talks List</h1>
-                <ul>
-                  <li>
-                    <Link to="/scs-state-react-styling">
-                      Scenic City Summit - State of React Styling
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to="/mcc-component-design">
-                      Music City Code - Component Based Styling
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to="/ds-expect-more">
-                      DevSpaceConf - Expect More: Getting Started with
-                      JavaScript Testing
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to="/ds-getting-specific">
-                      DevSpaceConf - Getting Specific: Component Based Styling
-                    </Link>
-                  </li>
-                </ul>
-              </div>
-            )}
+            render={props =>
+              console.log(props || 'no props') || (
+                <div>
+                  <h1>Talks List</h1>
+                  <ul>
+                    {Object.keys(links).map(key => (
+                      <li>
+                        <Link key={key} to={`/${key}`}>
+                          {links[key].title}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
           />
         </Switch>
       </Router>
