@@ -10,6 +10,7 @@ import {
   MMC_ComponentSlides,
   SCS_ComponentSlides,
   DS_GS_ComponentSlides,
+  CS_ComponentSlides,
 } from './presentations/state-of-styling';
 import DS_EM_ComponentSlides from './presentations/ds-expect-more';
 
@@ -31,6 +32,10 @@ const links = {
   'ds-getting-specific': {
     component: DS_GS_ComponentSlides,
     title: 'DevSpaceConf - Getting Specific: Component Based Styling',
+  },
+  'cs-breaking-css-global-namespace': {
+    component: CS_ComponentSlides,
+    title: 'CodeStock - Breaking CSS Global Namespace: Intro to Modular Styling',
   },
 };
 
