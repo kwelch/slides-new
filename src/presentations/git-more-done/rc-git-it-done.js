@@ -11,6 +11,7 @@ import {
   Image,
   Appear,
 } from 'spectacle';
+import AppearList from '../../components/AppearList';
 import preloader from 'spectacle/lib/utils/preloader';
 import createTheme from 'spectacle/lib/themes/default';
 require('normalize.css');
@@ -30,10 +31,14 @@ const images = {
   merge: require('./assets/merge.png'),
   rebaseOne: require('./assets/rebaseOne.png'),
   rebaseTwo: require('./assets/rebaseTwo.png'),
+  wtf: require('./assets/wtfm.jpg'),
+  gitHubFlow: require('./assets/github-flow.jpeg'),
+  gitFlowModel: require('./assets/git-flow-model.png'),
+  gitFlowCondensed: require('./assets/git-flow-condensed.jpeg'),
 };
 
 preloader(images);
-//#979797", "#008fb5", "#f1c109
+
 const theme = createTheme(
   {
     primary: 'white',
@@ -54,7 +59,7 @@ export default class Presentation extends React.Component {
   render() {
     return (
       <Deck
-        transition={['zoom', 'slide']}
+        transition={['slide']}
         transitionDuration={500}
         theme={theme}
         progress="pacman"
@@ -87,10 +92,20 @@ export default class Presentation extends React.Component {
           </Appear>
           <Appear>
             <Text>
-              <Link textSize="24" textColor="codePaneBg" href="https://xkcd.com/1296/">
+              <Link
+                textSize="24"
+                textColor="codePaneBg"
+                href="https://xkcd.com/1296/"
+              >
                 Source: XKCD
-              </Link><br/><br/>
-              <Link textSize="32" textColor="secondary" href="https://chris.beams.io/posts/git-commit/">
+              </Link>
+              <br />
+              <br />
+              <Link
+                textSize="32"
+                textColor="secondary"
+                href="https://chris.beams.io/posts/git-commit/"
+              >
                 Sevent Rules for Great Commits :wink:
               </Link>
             </Text>
@@ -195,16 +210,95 @@ export default class Presentation extends React.Component {
           </Appear>
         </Slide>
 
-        <Slide
-          transition={['slide']}
-          style={{
-            backgroundColor: '#f9f9f9',
-            backgroundRepeat: 'no-repeat',
-            backgroundPosition: 'center center',
-            backgroundSize: 'contain',
-            backgroundImage: `url(${images.about})`,
-          }}
-        />
+        <Slide bgColor="codePaneBg">
+          <Appear>
+            <Fill>
+              <Heading textColor="secondary" textSize="60">
+                Going Remote
+              </Heading>
+            </Fill>
+          </Appear>
+        </Slide>
+
+        <Slide bgColor="codePaneBg" transition={['fade']}>
+          <Image src={images.wtf} />
+        </Slide>
+
+        <Slide transition={['fade']}>
+          <Heading>What is it good for?</Heading>
+          <Text style={{ height: '16.5rem' }}>Absolutely Nothing</Text>
+        </Slide>
+
+        <Slide transition={['fade']}>
+          <Heading>What is it good for?</Heading>
+          <Text style={{ textDecoration: 'line-through' }}>
+            Absolutely Nothing
+          </Text>
+          <AppearList
+            textColor="secondary"
+            items={['Code Style', 'Mentoring', 'Validation / Testing']}
+          />
+        </Slide>
+
+        <Slide bgColor="codePaneBg">
+          <Heading textColor="secondary" textSize="60">
+            Push-ing Beyond
+          </Heading>
+          <AppearList
+            textColor="primary"
+            items={[
+              'Master Branch FTW!',
+              'GitHub Style / Feature Branching',
+              'GitFlow',
+              'Custom',
+            ]}
+          />
+        </Slide>
+
+        <Slide bgColor="#f8f7f5">
+          <Heading>Git Hub Flow</Heading>
+          <Image src={images.gitHubFlow} />
+          <Text>
+            <Link
+              href="https://www.endpoint.com/blog/2014/05/02/git-workflows-that-work/"
+              textColor="secondary"
+            >
+              Source
+            </Link>
+          </Text>
+        </Slide>
+
+        <Slide>
+          <Heading>Git Flow</Heading>
+          <Image src={images.gitFlowModel} height="50vh"/>
+          <Text>
+            <Link
+              href="http://nvie.com/posts/a-successful-git-branching-model/"
+              textColor="secondary"
+            >
+              Source
+            </Link>
+          </Text>
+        </Slide>
+
+        <Slide bgColor="#f8f7f5">
+          <Heading>Git Flow</Heading>
+          <Image src={images.gitFlowCondensed} />
+          <Text>
+            <Link
+              href="https://www.endpoint.com/blog/2014/05/02/git-workflows-that-work/"
+              textColor="secondary"
+            >
+              Source
+            </Link>
+          </Text>
+        </Slide>
+
+        {/*
+          Add Slide about Automation
+          https://developer.github.com/v3/checks/
+        */}
+
         <Slide transition={['zoom']} bgColor="primary">
           <Heading size={1} fit caps lineHeight={1} textColor="secondary">
             Thank You!
@@ -242,6 +336,17 @@ export default class Presentation extends React.Component {
             </Fill>
           </Layout>
         </Slide>
+
+        <Slide
+          transition={['slide']}
+          style={{
+            backgroundColor: '#f9f9f9',
+            backgroundRepeat: 'no-repeat',
+            backgroundPosition: 'center center',
+            backgroundSize: 'contain',
+            backgroundImage: `url(${images.about})`,
+          }}
+        />
       </Deck>
     );
   }
