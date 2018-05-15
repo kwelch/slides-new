@@ -6,9 +6,10 @@ import {
   Heading,
   Text,
   Link,
-  Layout, 
-  Fill, 
+  Layout,
+  Fill,
   Image,
+  Appear,
 } from 'spectacle';
 import preloader from 'spectacle/lib/utils/preloader';
 import createTheme from 'spectacle/lib/themes/default';
@@ -17,7 +18,18 @@ require('spectacle/lib/themes/default/index.css');
 
 const images = {
   about: require('../../assets/about-me.png'),
+  twitterLogo: require('../../assets/twitter-logo.svg'),
+  githubLogo: require('../../assets/GitHub-Mark-120px-plus.png'),
+
   intro: require('./assets/cover-image.png'),
+  master: require('./assets/master-commits.png'),
+  branch: require('./assets/branch-single-commit.png'),
+  secondBranch: require('./assets/secondary-branch.png'),
+  commits: require('./assets/xkcd_commit.png'),
+  branches: require('./assets/yo-dawg-branches.jpg'),
+  merge: require('./assets/merge.png'),
+  rebaseOne: require('./assets/rebaseOne.png'),
+  rebaseTwo: require('./assets/rebaseTwo.png'),
 };
 
 preloader(images);
@@ -30,9 +42,10 @@ const theme = createTheme(
     quartenary: '#979797',
     codePaneBg: '#2d2d2d',
     drawingBg: '#f9f9f9',
+    commitBg: '1e1e1e',
   },
   {
-    primary: 'Source+Code+Pro',
+    primary: 'Source Code Pro',
     secondary: 'Montserrat',
   }
 );
@@ -57,7 +70,130 @@ export default class Presentation extends React.Component {
           }}
         />
 
+        <Slide transition={['fade']}>
+          <Heading>Master Tree</Heading>
+          <Appear>
+            <Image
+              src={images.master}
+              style={{ marginTop: '6rem', border: '10px solid #008fb5' }}
+            />
+          </Appear>
+        </Slide>
 
+        <Slide transition={['fade']}>
+          <Heading textSize="60">Leaf me alone</Heading>
+          <Appear>
+            <Image src={images.commits} style={{ marginTop: '2rem' }} />
+          </Appear>
+          <Appear>
+            <Text>
+              <Link textSize="24" textColor="codePaneBg" href="https://xkcd.com/1296/">
+                Source: XKCD
+              </Link><br/><br/>
+              <Link textSize="32" textColor="secondary" href="https://chris.beams.io/posts/git-commit/">
+                Sevent Rules for Great Commits :wink:
+              </Link>
+            </Text>
+          </Appear>
+        </Slide>
+
+        <Slide transition={['fade']}>
+          <Heading textSize="78">Branch Out</Heading>
+          <Layout>
+            <Fill>
+              <Appear>
+                <Image
+                  src={images.branch}
+                  style={{
+                    border: '10px solid #979797',
+                    width: '20vw',
+                    margin: '2rem',
+                  }}
+                />
+              </Appear>
+            </Fill>
+
+            <Fill>
+              <Appear>
+                <Image
+                  src={images.secondBranch}
+                  style={{
+                    border: '10px solid #979797',
+                    width: '30vw',
+                    margin: '2rem',
+                  }}
+                />
+              </Appear>
+            </Fill>
+          </Layout>
+        </Slide>
+
+        <Slide bgColor="codePaneBg">
+          <Image src={images.branches} />
+        </Slide>
+
+        <Slide transition={['fade']}>
+          <Heading textSize="58" margin="0rem 0 4rem">
+            Back to Base-ics
+          </Heading>
+          <Layout>
+            <Appear>
+              <Fill>
+                <Text textSize="32">Merge</Text>
+                <Image
+                  src={images.merge}
+                  style={{
+                    border: '10px solid #979797',
+                    width: '20vw',
+                    margin: '2rem',
+                  }}
+                />
+              </Fill>
+            </Appear>
+
+            <Fill>
+              <Appear>
+                <Fill>
+                  <Text textSize="32">Rebase</Text>
+                  <Image
+                    src={images.rebaseOne}
+                    style={{
+                      margin: '2rem',
+                      border: '10px solid #979797',
+                      width: '30vw',
+                    }}
+                  />
+                </Fill>
+              </Appear>
+              <Appear>
+                <Fill>
+                  <Text>Squash</Text>
+                  <Image
+                    src={images.rebaseTwo}
+                    style={{
+                      border: '10px solid #979797',
+                      width: '30vw',
+                    }}
+                  />
+                </Fill>
+              </Appear>
+            </Fill>
+          </Layout>
+        </Slide>
+
+        <Slide transition={['fade']}>
+          <Heading>Git is hard</Heading>
+          <Appear>
+            <Heading style={{ marginTop: '6rem' }}>
+              <Link href="http://ohshitgit.com" textColor="secondary">
+                Oh Shit, Git!
+              </Link>
+            </Heading>
+          </Appear>
+          <Appear>
+            <Text>You are not alone</Text>
+          </Appear>
+        </Slide>
 
         <Slide
           transition={['slide']}
