@@ -212,56 +212,6 @@ export default class Presentation extends React.Component {
           </Appear>
         </Slide>
 
-        <Slide bgColor="codePaneBg" transition={['fade']}>
-          <Heading textColor="primary">STOP! Collaborate!</Heading>
-          <Image src={images.collaborate} />
-        </Slide>
-
-        <Slide bgColor="primary">
-          <Appear>
-            <Fill>
-              <Heading textColor="secondary" textSize="60">
-                Going Remote
-              </Heading>
-              <Image src={images.githubLogo} />
-            </Fill>
-          </Appear>
-        </Slide>
-
-        <Slide transition={['fade']}>
-          <Heading>What is git good for?</Heading>
-          <Text style={{ height: '16.5rem' }}>Absolutely Nothing</Text>
-        </Slide>
-
-        <Slide transition={['fade']}>
-          <Heading>What is git good for?</Heading>
-          <Text style={{ textDecoration: 'line-through' }}>
-            Absolutely Nothing
-          </Text>
-          <AppearList
-            textColor="secondary"
-            items={['Code Style', 'Mentoring', 'Validation / Testing']}
-          />
-        </Slide>
-
-        <Slide bgColor="codePaneBg" transition={['fade']}>
-          <Image src={images.automate} />
-        </Slide>
-
-        <Slide>
-          <Heading>Check Out</Heading>
-          <Text>These automation tools</Text>
-          <Layout>
-            <AppearList
-              items={['TravisCI', 'Appveyor', 'Codecov', 'AppCenter', 'Bots']}
-            />
-          </Layout>
-        </Slide>
-
-        <Slide bgColor="codePaneBg" transition={['fade']}>
-          <Image src={images.wtf} />
-        </Slide>
-
         <Slide bgColor="codePaneBg">
           <Heading textColor="secondary" textSize="60">
             Push-ing Beyond
@@ -322,6 +272,59 @@ export default class Presentation extends React.Component {
             <Heading textColor="secondary">?</Heading>
           </Appear>
         </Slide>
+
+
+
+        <Slide bgColor="codePaneBg" transition={['fade']}>
+          <Heading textColor="primary">STOP! Collaborate!</Heading>
+          <Image src={images.collaborate} />
+        </Slide>
+
+        <Slide bgColor="primary">
+          <Appear>
+            <Fill>
+              <Heading textColor="secondary" textSize="60">
+                Going Remote
+              </Heading>
+              <Image src={images.githubLogo} />
+            </Fill>
+          </Appear>
+        </Slide>
+
+        <Slide transition={['fade']}>
+          <Heading>What is git good for?</Heading>
+          <Text style={{ height: '16.5rem' }}>Absolutely Nothing</Text>
+        </Slide>
+
+        <Slide transition={['fade']}>
+          <Heading>What is git good for?</Heading>
+          <Text style={{ textDecoration: 'line-through' }}>
+            Absolutely Nothing
+          </Text>
+          <AppearList
+            textColor="secondary"
+            items={['Code Style', 'Mentoring', 'Validation / Testing']}
+          />
+        </Slide>
+
+        <Slide bgColor="codePaneBg" transition={['fade']}>
+          <Image src={images.automate} />
+        </Slide>
+
+        <Slide>
+          <Heading>Check Out</Heading>
+          <Text>These automation tools</Text>
+          <Layout>
+            <AppearList
+              items={['TravisCI', 'Appveyor', 'Codecov', 'AppCenter', 'Bots']}
+            />
+          </Layout>
+        </Slide>
+
+        <Slide bgColor="codePaneBg" transition={['fade']}>
+          <Image src={images.wtf} />
+        </Slide>
+
         <Slide bgColor="codePaneBg">
           <Heading textColor="secondary">Q &amp; A</Heading>
         </Slide>
