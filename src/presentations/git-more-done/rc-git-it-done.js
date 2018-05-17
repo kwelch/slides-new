@@ -35,6 +35,8 @@ const images = {
   gitHubFlow: require('./assets/github-flow.jpeg'),
   gitFlowModel: require('./assets/git-flow-model.png'),
   gitFlowCondensed: require('./assets/git-flow-condensed.jpeg'),
+  automate: require('./assets/automate_all_the_things.jpeg'),
+  collaborate: require('./assets/collaborate.gif'),
 };
 
 preloader(images);
@@ -210,12 +212,13 @@ export default class Presentation extends React.Component {
           </Appear>
         </Slide>
 
-        <Slide bgColor="codePaneBg">
+        <Slide bgColor="primary">
           <Appear>
             <Fill>
               <Heading textColor="secondary" textSize="60">
                 Going Remote
               </Heading>
+              <Image src={images.githubLogo} />
             </Fill>
           </Appear>
         </Slide>
@@ -225,12 +228,12 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide transition={['fade']}>
-          <Heading>What is it good for?</Heading>
+          <Heading>What is git good for?</Heading>
           <Text style={{ height: '16.5rem' }}>Absolutely Nothing</Text>
         </Slide>
 
         <Slide transition={['fade']}>
-          <Heading>What is it good for?</Heading>
+          <Heading>What is git good for?</Heading>
           <Text style={{ textDecoration: 'line-through' }}>
             Absolutely Nothing
           </Text>
@@ -238,6 +241,25 @@ export default class Presentation extends React.Component {
             textColor="secondary"
             items={['Code Style', 'Mentoring', 'Validation / Testing']}
           />
+        </Slide>
+
+        <Slide bgColor="codePaneBg" transition={['fade']}>
+          <Image src={images.automate} />
+        </Slide>
+
+        <Slide>
+          <Heading>Check Out</Heading>
+          <Text>These automation tools</Text>
+          <Layout>
+            <AppearList
+              items={['TravisCI', 'Appveyor', 'Codecov', 'AppCenter', 'Bots']}
+            />
+          </Layout>
+        </Slide>
+
+        <Slide bgColor="codePaneBg" transition={['fade']}>
+          <Heading textColor="primary">STOP! Collaborate!</Heading>
+          <Image src={images.collaborate} />
         </Slide>
 
         <Slide bgColor="codePaneBg">
@@ -270,7 +292,7 @@ export default class Presentation extends React.Component {
 
         <Slide>
           <Heading>Git Flow</Heading>
-          <Image src={images.gitFlowModel} height="50vh"/>
+          <Image src={images.gitFlowModel} height="50vh" />
           <Text>
             <Link
               href="http://nvie.com/posts/a-successful-git-branching-model/"
@@ -294,10 +316,13 @@ export default class Presentation extends React.Component {
           </Text>
         </Slide>
 
-        {/*
-          Add Slide about Automation
-          https://developer.github.com/v3/checks/
-        */}
+        <Slide>
+          <Heading>Custom</Heading>
+          <Appear><Heading textColor="secondary">?</Heading></Appear>
+        </Slide>
+        <Slide bgColor="codePaneBg">
+          <Heading textColor="secondary">Q &amp; A</Heading>
+        </Slide>
 
         <Slide transition={['zoom']} bgColor="primary">
           <Heading size={1} fit caps lineHeight={1} textColor="secondary">
