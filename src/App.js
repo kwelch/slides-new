@@ -13,6 +13,7 @@ import {
   CS_ComponentSlides,
 } from './presentations/state-of-styling';
 import DS_EM_ComponentSlides from './presentations/ds-expect-more';
+import {RC_ComponentSlides} from './presentations/git-more-done';
 
 const links = {
   'mcc-component-design': {
@@ -37,6 +38,10 @@ const links = {
     component: CS_ComponentSlides,
     title: 'CodeStock - Breaking CSS Global Namespace: Intro to Modular Styling',
   },
+  'rc-git-it-done': {
+    component: RC_ComponentSlides,
+    title: 'RevConf - Git it Done: Effective Feature Development',
+  }
 };
 
 class App extends Component {
