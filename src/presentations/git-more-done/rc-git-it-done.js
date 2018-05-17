@@ -212,6 +212,11 @@ export default class Presentation extends React.Component {
           </Appear>
         </Slide>
 
+        <Slide bgColor="codePaneBg" transition={['fade']}>
+          <Heading textColor="primary">STOP! Collaborate!</Heading>
+          <Image src={images.collaborate} />
+        </Slide>
+
         <Slide bgColor="primary">
           <Appear>
             <Fill>
@@ -221,10 +226,6 @@ export default class Presentation extends React.Component {
               <Image src={images.githubLogo} />
             </Fill>
           </Appear>
-        </Slide>
-
-        <Slide bgColor="codePaneBg" transition={['fade']}>
-          <Image src={images.wtf} />
         </Slide>
 
         <Slide transition={['fade']}>
@@ -258,8 +259,7 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide bgColor="codePaneBg" transition={['fade']}>
-          <Heading textColor="primary">STOP! Collaborate!</Heading>
-          <Image src={images.collaborate} />
+          <Image src={images.wtf} />
         </Slide>
 
         <Slide bgColor="codePaneBg">
@@ -318,7 +318,9 @@ export default class Presentation extends React.Component {
 
         <Slide>
           <Heading>Custom</Heading>
-          <Appear><Heading textColor="secondary">?</Heading></Appear>
+          <Appear>
+            <Heading textColor="secondary">?</Heading>
+          </Appear>
         </Slide>
         <Slide bgColor="codePaneBg">
           <Heading textColor="secondary">Q &amp; A</Heading>
