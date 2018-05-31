@@ -12,71 +12,105 @@ import {
   DS_GS_ComponentSlides,
   CS_ComponentSlides,
 } from './presentations/state-of-styling';
-import {DS_EM_ComponentSlides} from './presentations/expect-more';
-import {RC_ComponentSlides} from './presentations/git-more-done';
+import { DS_EM_ComponentSlides } from './presentations/ds-expect-more';
+import { RC_ComponentSlides } from './presentations/git-more-done';
 
-const links = {
-  'mcc-component-design': {
+const groupBy = list => key =>
+  list.reduce((acc, curr) => {
+    let yearKey = curr[key];
+    let currYearValue = acc[yearKey] || [];
+
+    return {
+      ...acc,
+      [yearKey]: [...currYearValue, curr],
+    };
+  }, {});
+
+const talks = [
+  {
+    key: 'mcc-component-design',
     component: MMC_ComponentSlides,
-    title: 'Music City Code - Component Based Styling',
+    conference: 'Music City Code',
+    year: 2017,
+    title: 'Component Based Styling',
   },
-  'scs-state-react-styling': {
+  {
+    key: 'scs-state-react-styling',
     component: SCS_ComponentSlides,
-    title: 'Scenic City Summit - State of React Styling',
+    conference: 'Scenic City Summit',
+    year: 2017,
+    title: 'State of React Styling',
     redirects: ['state-react-styling'],
   },
-  'ds-expect-more': {
+  {
+    key: 'ds-expect-more',
     component: DS_EM_ComponentSlides,
-    title:
-      'DevSpaceConf - Expect More: Getting Started with JavaScript Testing',
+    conference: 'DevSpace Conf',
+    year: 2017,
+    title: 'Expect More: Getting Started with JavaScript Testing',
   },
-  'ds-getting-specific': {
+  {
+    key: 'ds-getting-specific',
     component: DS_GS_ComponentSlides,
-    title: 'DevSpaceConf - Getting Specific: Component Based Styling',
+    conference: 'DevSpace Conf',
+    year: 2017,
+    title: 'Getting Specific: Component Based Styling',
   },
-  'cs-breaking-css-global-namespace': {
+  {
+    key: 'cs-breaking-css-global-namespace',
     component: CS_ComponentSlides,
-    title: 'CodeStock - Breaking CSS Global Namespace: Intro to Modular Styling',
+    conference: 'CodeStock',
+    year: 2018,
+    title: 'Breaking CSS Global Namespace: Intro to Modular Styling',
   },
-  'rc-git-it-done': {
+  {
+    key: 'rc-git-it-done',
     component: RC_ComponentSlides,
-    title: 'RevConf - Git it Done: Effective Feature Development',
-  }
-};
+    conference: 'Revolution Conf',
+    year: 2018,
+    title: 'Git it Done: Effective Feature Development',
+  },
+];
 
 class App extends Component {
   render() {
+    const talksByYear = groupBy(talks)('year');
+
     return (
       <Router>
         <Switch>
-          {Object.keys(links).map(key => {
-            const route = links[key];
-            return [
-              <Route key={key} path={`/${key}`} component={route.component} />,
-              ...(route.redirects || []).map(path => (
-                <Route
-                  path={`/${path}`}
-                  render={() => <Redirect to={`/${key}`} />}
-                />
-              )),
-            ];
-          })}
+          {talks.map(({ key, component, redirects }) => [
+            <Route key={key} path={`/${key}`} component={component} />,
+            ...(redirects || []).map(path => (
+              <Route
+                path={`/${path}`}
+                render={() => <Redirect to={`/${key}`} />}
+              />
+            )),
+          ])}
           <Route
-            render={props =>
-              console.log(props || 'no props') || (
-                <div>
-                  <h1>Talks List</h1>
-                  <ul>
-                    {Object.keys(links).map(key => (
-                      <li>
-                        <Link key={key} to={`/${key}`}>
-                          {links[key].title}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
+            render={props => (
+              <div>
+                <h1>Talks List</h1>
+                {Object.keys(talksByYear)
+                  .sort((yearA, yearB) => yearB - yearA)
+                  .map(year => (
+                    <div key={year}>
+                      <h2>{year}</h2>
+
+                      <ul>
+                        {talksByYear[year].map(talk => (
+                          <li key={talk.key}>
+                            <Link to={`/${talk.key}`}>
+                              {talk.conference} - {talk.title}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
+              </div>
+            )}
           />
         </Switch>
       </Router>
