@@ -12,7 +12,10 @@ import {
   DS_GS_ComponentSlides,
   CS_ComponentSlides,
 } from './presentations/state-of-styling';
-import { DS_EM_ComponentSlides } from './presentations/expect-more';
+import {
+  DS_EM_ComponentSlides,
+  MCC_EM_ComponentSlides,
+} from './presentations/expect-more';
 import { RC_ComponentSlides } from './presentations/git-more-done';
 
 const groupBy = list => key =>
@@ -70,6 +73,13 @@ const talks = [
     year: 2018,
     title: 'Git it Done: Effective Feature Development',
   },
+  {
+    key: 'mcc-expect-more',
+    component: MCC_EM_ComponentSlides,
+    conference: 'Music City Code',
+    year: 2018,
+    title: 'Expect More: Getting Started with JavaScript Testing',
+  }
 ];
 
 class App extends Component {
