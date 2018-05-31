@@ -12,7 +12,7 @@ import {
   DS_GS_ComponentSlides,
   CS_ComponentSlides,
 } from './presentations/state-of-styling';
-import DS_EM_ComponentSlides from './presentations/ds-expect-more';
+import { DS_EM_ComponentSlides } from './presentations/expect-more';
 import { RC_ComponentSlides } from './presentations/git-more-done';
 
 const groupBy = list => key =>
