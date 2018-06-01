@@ -49,7 +49,7 @@ const theme = createTheme(
   {
     primary: 'white',
     secondary: '#1F2022',
-    tertiary: '#99424f', 
+    tertiary: '#99424f',
     quartenary: '#CECECE',
     codePaneBg: '#2d2d2d',
   },
@@ -88,6 +88,59 @@ export default class Presentation extends React.Component {
             backgroundImage: `url(${images.intro})`,
           }}
         />
+        <Slide
+          style={{
+            backgroundColor: '#f9f9f9',
+          }}
+        >
+          <Image src={images.jest} height={150} />
+          <Heading style={{ lineHeight: '10rem' }}>
+            Delightful JavaScript Testing
+          </Heading>
+          <Notes>
+            <ul>
+              <li>All in one</li>
+              <li>Spy</li>
+              <li>Coverage</li>
+              <li>assertions</li>
+              <li>watch mode</li>
+            </ul>
+          </Notes>
+        </Slide>
+        <Slide bgColor="tertiary">
+          <Heading textColor="primary">Setup</Heading>
+          <AppearList
+           textColor="primary"
+            items={['npm install --save-dev jest-cli', '"test": "jest"']}
+          />
+        </Slide>
+
+        <Slide bgColor="codePaneBg">
+          <Image src={images.time} />
+        </Slide>
+
+        <Slide
+          style={{
+            backgroundColor: '#f9f9f9',
+          }}
+        >
+          <Layout>
+            <Fill>
+              <Appear>
+                <div>
+                  <Image src={images.raincoat} />
+                </div>
+              </Appear>
+            </Fill>
+            <Fill>
+              <Appear>
+                <div>
+                  <Image src={images.umbrella} />
+                </div>
+              </Appear>
+            </Fill>
+          </Layout>
+        </Slide>
         <Slide transition={['zoom']} bgColor="primary">
           <Heading size={1} fit caps lineHeight={1} textColor="secondary">
             Thank You!
