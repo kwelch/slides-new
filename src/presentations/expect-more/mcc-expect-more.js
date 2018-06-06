@@ -14,6 +14,8 @@ import {
   Text,
   Notes,
   Appear,
+  List,
+  ListItem,
 } from 'spectacle';
 
 import AppearList from '../../components/AppearList';
@@ -110,7 +112,7 @@ export default class Presentation extends React.Component {
         <Slide bgColor="tertiary">
           <Heading textColor="primary">Setup</Heading>
           <AppearList
-           textColor="primary"
+            textColor="primary"
             items={['npm install --save-dev jest-cli', '"test": "jest"']}
           />
         </Slide>
@@ -140,6 +142,26 @@ export default class Presentation extends React.Component {
               </Appear>
             </Fill>
           </Layout>
+        </Slide>
+        <Slide>
+          <Heading>Resources</Heading>
+          <List>
+            <ListItem>
+              <Link href="https://facebook.github.io/jest/docs/en/getting-started.html">Jest Docs</Link>
+            </ListItem>
+            <ListItem>
+              <Link href="https://github.com/NashReact/jest-exercises">Jest Exercises</Link>
+            </ListItem>
+            <ListItem>
+              <Link href="https://www.youtube.com/watch?v=ZJ43STkmK-4">Jest as a Platform</Link>
+            </ListItem>
+            <ListItem>
+              <Link href="https://github.com/airbnb/enzyme">Enzyme For React Component Testing</Link>
+            </ListItem>
+            <ListItem>
+              <Link href="https://github.com/FormidableLabs/enzyme-matchers">Enzyme Matchers for better assertions</Link>
+            </ListItem>
+          </List>
         </Slide>
         <Slide transition={['zoom']} bgColor="primary">
           <Heading size={1} fit caps lineHeight={1} textColor="secondary">
