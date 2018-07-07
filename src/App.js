@@ -15,8 +15,12 @@ import {
 import {
   DS_EM_ComponentSlides,
   MCC_EM_ComponentSlides,
+  KCDC_EM_ComponentSlides,
 } from './presentations/expect-more';
-import { RC_ComponentSlides } from './presentations/git-more-done';
+import {
+  RC_ComponentSlides,
+  KCDC_ComponentSlides as KCDC_GMD_ComponentSlides,
+} from './presentations/git-more-done';
 
 const groupBy = list => key =>
   list.reduce((acc, curr) => {
@@ -32,54 +36,68 @@ const groupBy = list => key =>
 const talks = [
   {
     key: 'mcc-component-design',
-    component: MMC_ComponentSlides,
     conference: 'Music City Code',
     year: 2017,
+    component: MMC_ComponentSlides,
     title: 'Component Based Styling',
   },
   {
     key: 'scs-state-react-styling',
-    component: SCS_ComponentSlides,
     conference: 'Scenic City Summit',
     year: 2017,
+    component: SCS_ComponentSlides,
     title: 'State of React Styling',
     redirects: ['state-react-styling'],
   },
   {
     key: 'ds-expect-more',
-    component: DS_EM_ComponentSlides,
     conference: 'DevSpace Conf',
     year: 2017,
+    component: DS_EM_ComponentSlides,
     title: 'Expect More: Getting Started with JavaScript Testing',
   },
   {
     key: 'ds-getting-specific',
-    component: DS_GS_ComponentSlides,
     conference: 'DevSpace Conf',
     year: 2017,
+    component: DS_GS_ComponentSlides,
     title: 'Getting Specific: Component Based Styling',
   },
   {
     key: 'cs-breaking-css-global-namespace',
-    component: CS_ComponentSlides,
     conference: 'CodeStock',
     year: 2018,
+    component: CS_ComponentSlides,
     title: 'Breaking CSS Global Namespace: Intro to Modular Styling',
   },
   {
     key: 'rc-git-it-done',
-    component: RC_ComponentSlides,
     conference: 'Revolution Conf',
     year: 2018,
+    component: RC_ComponentSlides,
     title: 'Git it Done: Effective Feature Development',
   },
   {
     key: 'mcc-expect-more',
-    component: MCC_EM_ComponentSlides,
     conference: 'Music City Code',
     year: 2018,
+    component: MCC_EM_ComponentSlides,
     title: 'Expect More: Getting Started with JavaScript Testing',
-  }
+  },
+  {
+    key: 'kcdc-git-it-done',
+    conference: 'Kansas City Developer Conference',
+    year: 2018,
+    component: KCDC_GMD_ComponentSlides,
+    title: KCDC_GMD_ComponentSlides.title,
+  },
+  {
+    key: 'kcdc-expect-more',
+    conference: 'Kansas City Developer Conference',
+    year: 2018,
+    component: KCDC_EM_ComponentSlides,
+    title: KCDC_EM_ComponentSlides.title,
+  },
 ];
 
 class App extends Component {
