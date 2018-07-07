@@ -14,6 +14,8 @@ import {
   Text,
   Notes,
   Appear,
+  List,
+  ListItem,
 } from 'spectacle';
 
 import AppearList from '../../components/AppearList';
@@ -87,50 +89,6 @@ export default class Presentation extends React.Component {
             }}
           />
           <Slide
-            transition={['slide']}
-            style={{
-              backgroundColor: '#f9f9f9',
-              backgroundRepeat: 'no-repeat',
-              backgroundPosition: 'center center',
-              backgroundSize: 'contain',
-              backgroundImage: `url(${images.about})`,
-            }}
-          />
-          <Slide
-            transition={['slide']}
-            style={{
-              backgroundColor: '#f9f9f9',
-              backgroundRepeat: 'no-repeat',
-              backgroundPosition: 'center center',
-              backgroundSize: 'contain',
-              backgroundImage: `url(${images.sponsors})`,
-            }}
-          />
-          <Slide transition={['fade']} bgColor="tertiary">
-            <Notes>
-              <ul>
-                <li />
-              </ul>
-            </Notes>
-            <Heading fit textColor="primary">
-              What is this talk?
-            </Heading>
-            <AppearList
-              textColor="primary"
-              items={[
-                'Knowledge to get started',
-                'Adding testing to your flow',
-                'Excited about testing',
-              ]}
-            />
-          </Slide>
-          <Slide>
-            <Heading>Setup</Heading>
-            <AppearList
-              items={['npm install --save-dev jest-cli', '"test": "jest"']}
-            />
-          </Slide>
-          <Slide
             style={{
               backgroundColor: '#f9f9f9',
             }}
@@ -149,26 +107,12 @@ export default class Presentation extends React.Component {
               </ul>
             </Notes>
           </Slide>
-          <Slide
-            style={{
-              backgroundColor: '#f9f9f9',
-            }}
-          >
-            <Heading>Shameless</Heading>
-            <Image src={images.plug} />
-            <Appear>
-              <div>
-                <Text>Exercises</Text>
-                <Text>
-                  <Link
-                    textColor="tertiary"
-                    href="https://github.com/NashReact/jest-exercises"
-                  >
-                    github.com/NashReact/jest-exercises
-                  </Link>
-                </Text>
-              </div>
-            </Appear>
+          <Slide bgColor="tertiary">
+            <Heading textColor="primary">Setup</Heading>
+            <AppearList
+              textColor="primary"
+              items={['npm install --save-dev jest-cli', '"test": "jest"']}
+            />
           </Slide>
 
           <Slide bgColor="codePaneBg">
@@ -197,22 +141,36 @@ export default class Presentation extends React.Component {
               </Fill>
             </Layout>
           </Slide>
-
           <Slide>
-            <Heading>Exciting Stuff</Heading>
+            <Heading>Resources</Heading>
+            <List>
+              <ListItem>
+                <Link href="https://facebook.github.io/jest/docs/en/getting-started.html">
+                  Jest Docs
+                </Link>
+              </ListItem>
+              <ListItem>
+                <Link href="https://github.com/NashReact/jest-exercises">
+                  Jest Exercises
+                </Link>
+              </ListItem>
+              <ListItem>
+                <Link href="https://www.youtube.com/watch?v=ZJ43STkmK-4">
+                  Jest as a Platform
+                </Link>
+              </ListItem>
+              <ListItem>
+                <Link href="https://github.com/airbnb/enzyme">
+                  Enzyme For React Component Testing
+                </Link>
+              </ListItem>
+              <ListItem>
+                <Link href="https://github.com/FormidableLabs/enzyme-matchers">
+                  Enzyme Matchers for better assertions
+                </Link>
+              </ListItem>
+            </List>
           </Slide>
-
-          <Slide
-            transition={['zoom']}
-            style={{
-              backgroundColor: '#f9f9f9',
-              backgroundRepeat: 'no-repeat',
-              backgroundPosition: 'center center',
-              backgroundSize: 'contain',
-              backgroundImage: `url(${images.lifeUnitTests})`,
-            }}
-          />
-
           <Slide transition={['zoom']} bgColor="primary">
             <Heading size={1} fit caps lineHeight={1} textColor="secondary">
               Thank You!
@@ -221,13 +179,13 @@ export default class Presentation extends React.Component {
               Kyle Welch
             </Text>
             <Link
-              href="http://bit.ly/ds-expect-more"
+              href="https://slides.krwelch.com/mcc-expect-more"
               margin=".5rem 0 0"
               textColor="tertiary"
               size={0.75}
               italic
             >
-              http://bit.ly/ds-expect-more
+              https://slides.krwelch.com/mcc-expect-more
             </Link>
             <Layout style={{ marginTop: 100, justifyContent: 'space-between' }}>
               <Fill>
@@ -250,6 +208,16 @@ export default class Presentation extends React.Component {
               </Fill>
             </Layout>
           </Slide>
+          <Slide
+            transition={['slide']}
+            style={{
+              backgroundColor: '#f9f9f9',
+              backgroundRepeat: 'no-repeat',
+              backgroundPosition: 'center center',
+              backgroundSize: 'contain',
+              backgroundImage: `url(${images.about})`,
+            }}
+          />
         </Deck>
       </DeckWrapper>
     );
