@@ -52,11 +52,12 @@ preloader(images);
 
 const theme = createTheme(
   {
-    primary: 'white',
+    primary: '#CECECE',
     secondary: '#1F2022',
     tertiary: '#99424f', //'#03A9FC',
-    quartenary: '#CECECE',
+    quartenary: 'white',
     codePaneBg: '#2d2d2d',
+    drawingBg: '#f9f9f9',
   },
   {
     primary: 'Montserrat',
@@ -99,30 +100,12 @@ export default class Presentation extends React.Component {
               backgroundImage: `url(${images.intro})`,
             }}
           />
-          <Slide
-            style={{
-              backgroundColor: '#f9f9f9',
-            }}
-          >
-            <Image src={images.jest} height={150} />
-            <Heading style={{ lineHeight: '10rem' }}>
-              Delightful JavaScript Testing
-            </Heading>
-            <Notes>
-              <ul>
-                <li>All in one</li>
-                <li>Spy</li>
-                <li>Coverage</li>
-                <li>assertions</li>
-                <li>watch mode</li>
-              </ul>
-            </Notes>
-          </Slide>
-          <Slide bgColor="tertiary">
-            <Heading textColor="primary">Setup</Heading>
+
+          <Slide>
+            <Heading fit>Why?</Heading>
             <AppearList
-              textColor="primary"
-              items={['npm install --save-dev jest-cli', '"test": "jest"']}
+              textColor="tertiary"
+              items={['Confidence', 'Documentation', 'Lazy']}
             />
           </Slide>
 
@@ -130,11 +113,14 @@ export default class Presentation extends React.Component {
             <Image src={images.time} />
           </Slide>
 
-          <Slide
-            style={{
-              backgroundColor: '#f9f9f9',
-            }}
-          >
+          <Slide bgColor={'tertiary'}>
+            <Heading fit textColor={'quartenary'}>
+              What?
+            </Heading>
+            <AppearList textColor={'quartenary'} items={['Everything!']} />
+          </Slide>
+
+          <Slide bgColor={'drawingBg'}>
             <Layout>
               <Fill>
                 <Appear>
@@ -151,6 +137,56 @@ export default class Presentation extends React.Component {
                 </Appear>
               </Fill>
             </Layout>
+          </Slide>
+
+          <Slide bgColor={'tertiary'}>
+            <Heading fit textColor={'quartenary'}>
+              What?
+            </Heading>
+            <AppearList
+              textColor={'quartenary'}
+              items={[
+                <span style={{ textDecoration: 'line-through' }}>
+                  Everything!
+                </span>,
+                'Critical Path',
+                'Bugs',
+                'Eveything, maybe?',
+              ]}
+            />
+          </Slide>
+
+          <Slide bgColor={'codePaneBg'}>
+            <Heading fit textColor={'drawingBg'}>
+              How?
+            </Heading>
+          </Slide>
+
+          <Slide bgColor="drawingBg">
+            <Image src={images.jest} height={150} />
+            <Heading style={{ lineHeight: '10rem' }}>
+              Delightful JavaScript Testing
+            </Heading>
+            <Notes>
+              <ul>
+                <li>All in one</li>
+                <li>Spy</li>
+                <li>Coverage</li>
+                <li>assertions</li>
+                <li>watch mode</li>
+              </ul>
+            </Notes>
+          </Slide>
+          <Slide bgColor="tertiary">
+            <video
+              style={{ height: '100vh', margin: '-20vh -25vw' }}
+              autoPlay={true}
+            >
+              <source
+                src={require('./assets/install-run-jest.mp4')}
+                type="video/mp4"
+              />
+            </video>
           </Slide>
           <Slide>
             <Heading>Resources</Heading>
@@ -177,6 +213,11 @@ export default class Presentation extends React.Component {
               </ListItem>
               <ListItem>
                 <Link href="https://github.com/FormidableLabs/enzyme-matchers">
+                  Enzyme Matchers for better assertions
+                </Link>
+              </ListItem>
+              <ListItem>
+                <Link href="https://medium.com/@chrisholland/moving-parts-bfdcaa25b79d">
                   Enzyme Matchers for better assertions
                 </Link>
               </ListItem>
@@ -219,10 +260,11 @@ export default class Presentation extends React.Component {
               </Fill>
             </Layout>
           </Slide>
+
           <Slide
+            bgColor="drawingBg"
             transition={['slide']}
             style={{
-              backgroundColor: '#f9f9f9',
               backgroundRepeat: 'no-repeat',
               backgroundPosition: 'center center',
               backgroundSize: 'contain',
