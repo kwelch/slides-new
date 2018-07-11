@@ -252,8 +252,8 @@ export default class Presentation extends React.Component {
             <Heading>Git is hard</Heading>
             <Appear>
               <Heading style={{ marginTop: '6rem' }}>
-                <Link href="http://ohshitgit.com" textColor="secondary">
-                  Oh Shit, Git!
+                <Link href="http://dangitgit.com" textColor="secondary">
+                  Darn It, Git!
                 </Link>
               </Heading>
             </Appear>
