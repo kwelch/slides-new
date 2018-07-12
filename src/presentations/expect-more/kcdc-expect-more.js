@@ -46,6 +46,9 @@ const images = {
   plug: require('./assets/plug.png'),
   lifeUnitTests: require('./assets/life-unit-tests.png'),
   time: require('./assets/time.jpeg'),
+  threeAs: require('./assets/three-a-of-testing.png'),
+  measureFail: require('./assets/measure.gif'),
+  jestPlatform: require('./assets/jest-as-platform.png'),
 };
 
 preloader(images);
@@ -170,17 +173,18 @@ export default class Presentation extends React.Component {
             <Notes>
               <ul>
                 <li>All in one</li>
-                <li>Spy</li>
-                <li>Coverage</li>
                 <li>assertions</li>
                 <li>watch mode</li>
+                <li>Spy</li>
+                <li>Coverage</li>
               </ul>
             </Notes>
           </Slide>
-          <Slide bgColor="tertiary">
+          <Slide bgColor={'codePaneBg'}>
             <video
               style={{ height: '100vh', margin: '-20vh -25vw' }}
               autoPlay={true}
+              controls={true}
             >
               <source
                 src={require('./assets/install-run-jest.mp4')}
@@ -188,6 +192,63 @@ export default class Presentation extends React.Component {
               />
             </video>
           </Slide>
+
+          <Slide bgColor={'codePaneBg'}>
+            <Heading fit textColor={'drawingBg'}>
+              How?
+            </Heading>
+            <List textColor={'drawingBg'}>
+              <ListItem>Arrange</ListItem>
+              <ListItem>Act</ListItem>
+              <ListItem>Assert</ListItem>
+            </List>
+          </Slide>
+          <Slide bgColor={'codePaneBg'}>
+            <Heading textColor={'drawingBg'} style={{ marginTop: '-15vh' }}>
+              How?
+            </Heading>
+            <Image src={images.threeAs} width="100%" />
+            <Link
+              href="https://github.com/coryhouse/react-slingshot/blob/master/src/utils/fuelSavings.spec.js#L31-L40"
+              textColor={'drawingBg'}
+            >
+              Source - React Slingshot
+            </Link>
+          </Slide>
+
+          <Slide bgColor={'tertiary'}>
+            <Heading textColor={'primary'}>Measure</Heading>
+            <Appear>
+              <Image src={images.measureFail} width={'50vw'} />
+            </Appear>
+          </Slide>
+
+          <Slide bgColor={'tertiary'}>
+            <video
+              style={{ height: '100vh', margin: '-20vh -25vw' }}
+              autoPlay={true}
+              controls={true}
+            >
+              <source src={require('./assets/coverage.mp4')} type="video/mp4" />
+            </video>
+          </Slide>
+
+          <Slide bgColor={'primary'}>
+            <Heading textColor={'codePaneBg'}>What's Next?</Heading>
+            <Appear>
+              <Image src={images.jestPlatform} width={'55vw'} />
+            </Appear>
+          </Slide>
+
+          <Slide bgColor={'codePaneBg'}>
+            <Heading fit textColor={'drawingBg'}>
+              Questions?
+            </Heading>
+            <Appear>
+              <Text textColor={'tertiary'}>SDK Demo, if time</Text>
+            </Appear>
+          </Slide>
+
           <Slide>
             <Heading>Resources</Heading>
             <List>
@@ -197,13 +258,8 @@ export default class Presentation extends React.Component {
                 </Link>
               </ListItem>
               <ListItem>
-                <Link href="https://github.com/NashReact/jest-exercises">
-                  Jest Exercises
-                </Link>
-              </ListItem>
-              <ListItem>
                 <Link href="https://www.youtube.com/watch?v=ZJ43STkmK-4">
-                  Jest as a Platform
+                  Jest as a Platform - Rogelio Guzman (Real World React)
                 </Link>
               </ListItem>
               <ListItem>
@@ -218,11 +274,28 @@ export default class Presentation extends React.Component {
               </ListItem>
               <ListItem>
                 <Link href="https://medium.com/@chrisholland/moving-parts-bfdcaa25b79d">
-                  Enzyme Matchers for better assertions
+                  Moving Parts by Chris Holland
+                </Link>
+              </ListItem>
+              <ListItem>
+                <Link href="https://github.com/NashReact/jest-exercises">
+                  Jest Exercises
                 </Link>
               </ListItem>
             </List>
           </Slide>
+
+          <Slide
+            bgColor="drawingBg"
+            transition={['slide']}
+            style={{
+              backgroundRepeat: 'no-repeat',
+              backgroundPosition: 'center center',
+              backgroundSize: 'contain',
+              backgroundImage: `url(${images.about})`,
+            }}
+          />
+
           <Slide transition={['zoom']} bgColor="primary">
             <Heading size={1} fit caps lineHeight={1} textColor="secondary">
               Thank You!
@@ -260,17 +333,6 @@ export default class Presentation extends React.Component {
               </Fill>
             </Layout>
           </Slide>
-
-          <Slide
-            bgColor="drawingBg"
-            transition={['slide']}
-            style={{
-              backgroundRepeat: 'no-repeat',
-              backgroundPosition: 'center center',
-              backgroundSize: 'contain',
-              backgroundImage: `url(${images.about})`,
-            }}
-          />
         </Deck>
       </DeckWrapper>
     );
