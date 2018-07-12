@@ -304,13 +304,13 @@ export default class Presentation extends React.Component {
               Kyle Welch
             </Text>
             <Link
-              href="https://slides.krwelch.com/mcc-expect-more"
+              href="https://slides.krwelch.com/kcdc-expect-more"
               margin=".5rem 0 0"
               textColor="tertiary"
               size={0.75}
               italic
             >
-              https://slides.krwelch.com/mcc-expect-more
+              https://slides.krwelch.com/kcdc-expect-more
             </Link>
             <Layout style={{ marginTop: 100, justifyContent: 'space-between' }}>
               <Fill>
