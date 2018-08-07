@@ -22,6 +22,7 @@ import {
   RC_ComponentSlides,
   KCDC_ComponentSlides as KCDC_GMD_ComponentSlides,
 } from './presentations/git-more-done';
+import { SCS_JavaScriptEcosystemSlides } from './presentations/modern-javascript';
 
 const groupBy = list => key =>
   list.reduce((acc, curr) => {
@@ -110,6 +111,8 @@ const talks = [
     key: 'scs-web-terrible',
     conference: 'Scenic City Summit',
     year: 2018,
+    component: SCS_JavaScriptEcosystemSlides,
+    title: SCS_JavaScriptEcosystemSlides.title,
   },
 ];
 
