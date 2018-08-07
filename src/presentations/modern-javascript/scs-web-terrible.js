@@ -64,6 +64,39 @@ export default class Presentation extends React.Component {
           <Slide>
             <Heading>Web development is terrible, you should try it!</Heading>
           </Slide>
+
+          <Slide>
+            <Heading>CSS Blinds</Heading>
+          </Slide>
+
+          <Slide>
+            <Heading>Classic HTML Head Tag</Heading>
+          </Slide>
+
+          <Slide>
+            <Heading>Modern HTML Head Tag</Heading>
+          </Slide>
+
+          <Slide>
+            <Heading>Timeline</Heading>
+          </Slide>
+
+          <Slide>
+            <Heading>Atwood's Law</Heading>
+          </Slide>
+
+          <Slide>
+            <Heading>Package.json Breakdown - Out of the Box `npm init -y`</Heading>
+          </Slide>
+
+          <Slide>
+            <Heading>Package.json Breakdown - Package `eventbrite-sdk-javascript`</Heading>
+          </Slide>
+
+          <Slide>
+            <Heading>Package.json Breakdown - App `family fued`</Heading>
+          </Slide>
+
         </Deck>
       </DeckWrapper>
     );
