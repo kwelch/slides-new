@@ -16,6 +16,7 @@ import {
   DS_EM_ComponentSlides,
   MCC_EM_ComponentSlides,
   KCDC_EM_ComponentSlides,
+  SCS_EM_ComponentSlides,
 } from './presentations/expect-more';
 import {
   RC_ComponentSlides,
@@ -97,6 +98,18 @@ const talks = [
     year: 2018,
     component: KCDC_EM_ComponentSlides,
     title: KCDC_EM_ComponentSlides.title,
+  },
+  {
+    key: 'scs-expect-more',
+    conference: 'Scenic City Summit',
+    year: 2018,
+    component: SCS_EM_ComponentSlides,
+    title: SCS_EM_ComponentSlides.title,
+  },
+  {
+    key: 'scs-web-terrible',
+    conference: 'Scenic City Summit',
+    year: 2018,
   },
 ];
 
