@@ -16,6 +16,9 @@ import {
   Appear,
   List,
   ListItem,
+  BlockQuote,
+  Quote,
+  Cite,
 } from 'spectacle';
 
 import AppearList from '../../components/AppearList';
@@ -84,16 +87,6 @@ export default class Presentation extends React.Component {
           progress="pacman"
         >
           <Slide
-            transition={['slide']}
-            style={{
-              backgroundColor: '#f9f9f9',
-              backgroundRepeat: 'no-repeat',
-              backgroundPosition: 'center center',
-              backgroundSize: 'contain',
-              backgroundImage: `url(${images.sponsors})`,
-            }}
-          />
-          <Slide
             transition={['zoom']}
             style={{
               backgroundColor: '#f9f9f9',
@@ -140,6 +133,15 @@ export default class Presentation extends React.Component {
                 </Appear>
               </Fill>
             </Layout>
+          </Slide>
+
+          <Slide bgColor={'tertiary'}>
+            <BlockQuote>
+              <Quote>Test it how it is meant to be used</Quote>
+              <Appear>
+                <Cite textColor={'quartenary'}>Me (just now)</Cite>
+              </Appear>
+            </BlockQuote>
           </Slide>
 
           <Slide bgColor={'tertiary'}>
