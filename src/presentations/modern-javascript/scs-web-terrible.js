@@ -35,7 +35,7 @@ const images = {
   classicHTML: require('./assets/classic-html-head.png'),
   slideHTML: require('./assets/slide-entire-html.png'),
   darkSideCookies: require('./assets/dark-side-cookies.jpg'),
-  darkSideCookies: require('./assets/overflow.gif'),
+  overflow: require('./assets/overflow.gif'),
 
   npmLogo: require('./assets/npm-logo.png'),
   webpackLogo: require('./assets/webpack-logo.png'),
