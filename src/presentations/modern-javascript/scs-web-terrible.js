@@ -10,10 +10,14 @@ import {
   Layout,
   Fill,
   Image,
+  BlockQuote,
+  Quote,
+  Cite,
 } from 'spectacle';
 import TitleHeader from '../../components/TitleHeader';
 import TwitterFooter from '../../components/TwitterFooter';
 import DeckWrapper from '../../components/DeckWrapper';
+import AppearList from '../../components/AppearList';
 import preloader from 'spectacle/lib/utils/preloader';
 import createTheme from 'spectacle/lib/themes/default';
 require('normalize.css');
@@ -116,6 +120,46 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
+            <Heading>Timeline</Heading>
+            <AppearList
+              items={[
+                '1995 - LiveScript is born',
+                '1997 - ECMAScript Standardized',
+                '2000 - AJAX 🎉 (2002 JSON & SPA)',
+              ]}
+            />
+          </Slide>
+          <Slide>
+            <Heading>Timeline</Heading>
+            <Heading>2004</Heading>
+            <Text fit textColor="white">
+              I became a dev!
+            </Text>
+            <Text textColor="white" margin="5rem 0 0 ">
+              FireFox 🔥 🦊
+            </Text>
+          </Slide>
+          <Slide>
+            <Heading>Timeline</Heading>
+            <AppearList
+              items={['2006 - JQuery & 🔥🐛', '2009 - ES5 (CommonJS & Node)']}
+            />
+          </Slide>
+
+          <Slide bgColor={'tertiary'}>
+            <BlockQuote>
+              <Quote>Node is just a fad</Quote>
+              <Appear>
+                <Cite textColor="black">Me (2011)</Cite>
+              </Appear>
+            </BlockQuote>
+          </Slide>
+          <Slide>
+            <Heading>Timeline</Heading>
+            <AppearList items={['2013 - React Open Sourced']} />
+          </Slide>
+
+          <Slide>
             <Image
               src={images.classicHTML}
               width="150%"
@@ -131,10 +175,6 @@ export default class Presentation extends React.Component {
               style={{ marginLeft: '-10rem' }}
               alt="HTML minimalized, requires JavaScript"
             />
-          </Slide>
-
-          <Slide>
-            <Heading>Timeline</Heading>
           </Slide>
 
           <Slide>
@@ -169,6 +209,55 @@ export default class Presentation extends React.Component {
 
           <Slide>
             <Heading>Tools</Heading>
+          </Slide>
+
+          <Slide
+            bgColor="drawingBg"
+            transition={['slide']}
+            style={{
+              backgroundRepeat: 'no-repeat',
+              backgroundPosition: 'center center',
+              backgroundSize: 'contain',
+              backgroundImage: `url(${images.about})`,
+            }}
+          />
+
+          <Slide transition={['zoom']} bgColor="primary">
+            <Heading size={1} fit caps lineHeight={1} textColor="secondary">
+              Thank You!
+            </Heading>
+            <Text margin="5rem 0 0" textColor="tertiary" size={3} bold>
+              Kyle Welch
+            </Text>
+            <Link
+              href="https://slides.krwelch.com/scs-web-terrible"
+              margin=".5rem 0 0"
+              textColor="tertiary"
+              size={0.75}
+              italic
+            >
+              https://slides.krwelch.com/scs-web-terrible
+            </Link>
+            <Layout style={{ marginTop: 100, justifyContent: 'space-between' }}>
+              <Fill>
+                <Text textColor="tertiary" style={{ textAlign: 'left' }}>
+                  <Image
+                    src={images.twitterLogo}
+                    style={{ height: 25, margin: '0 10px 0' }}
+                  />
+                  @kylewelch
+                </Text>
+              </Fill>
+              <Fill>
+                <Text style={{ textAlign: 'right' }}>
+                  <Image
+                    src={images.githubLogo}
+                    style={{ height: 30, margin: '0 10px 0' }}
+                  />
+                  /kwelch
+                </Text>
+              </Fill>
+            </Layout>
           </Slide>
         </Deck>
       </DeckWrapper>
