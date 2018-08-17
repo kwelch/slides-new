@@ -258,13 +258,11 @@ export default class Presentation extends React.Component {
 
 
           <Slide>
-            <Appear>
               <Image
                 src={images.overflow}
                 width="100%"
                 alt="Too much food in small container"
               />
-            </Appear>
           </Slide>
 
           <Slide>
