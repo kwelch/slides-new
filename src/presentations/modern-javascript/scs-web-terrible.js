@@ -13,6 +13,8 @@ import {
   BlockQuote,
   Quote,
   Cite,
+  List,
+  ListItem,
 } from 'spectacle';
 import TitleHeader from '../../components/TitleHeader';
 import TwitterFooter from '../../components/TwitterFooter';
@@ -33,6 +35,13 @@ const images = {
   classicHTML: require('./assets/classic-html-head.png'),
   slideHTML: require('./assets/slide-entire-html.png'),
   darkSideCookies: require('./assets/dark-side-cookies.jpg'),
+  darkSideCookies: require('./assets/overflow.gif'),
+
+  npmLogo: require('./assets/npm-logo.png'),
+  webpackLogo: require('./assets/webpack-logo.png'),
+  eslintLogo: require('./assets/eslint-logo.jpg'),
+  babelLogo: require('./assets/babel-logo.jpg'),
+  jestLogo: require('./assets/jest-logo.png'),
 
   basicPackageJson: require('./assets/basicPackageJson.png'),
   sdkPackageJson: require('./assets/sdkPackageJson.png'),
@@ -57,11 +66,6 @@ const theme = createTheme(
 );
 
 class TweetComponent extends React.Component {
-  constructor(props) {
-    super(props);
-    this.tweetDiv;
-  }
-
   componentDidMount() {
     if (
       global.twttr &&
@@ -156,7 +160,26 @@ export default class Presentation extends React.Component {
           </Slide>
           <Slide>
             <Heading>Timeline</Heading>
-            <AppearList items={['2013 - React Open Sourced']} />
+            <AppearList
+              items={[
+                '2013 - React Open Sourced',
+                '2015 - ES5 (ES2015) & React Native',
+              ]}
+            />
+          </Slide>
+
+          <Slide>
+            <Heading fit>Angular Timeline</Heading>
+            <AppearList
+              items={[
+                '2010 - V1 AngularJS (Active Dev in 2018)',
+                '2016 - V2',
+                '2016 - V4',
+                '2017 - V5',
+                '2018 - V6',
+                '2018 - V7',
+              ]}
+            />
           </Slide>
 
           <Slide>
@@ -181,6 +204,12 @@ export default class Presentation extends React.Component {
             <Layout>
               <TweetComponent id="1450775823" options={{ theme: 'dark' }} />
             </Layout>
+          </Slide>
+
+          <Slide>
+            <Heading fit>Rise of Package Managers</Heading>
+
+            <Image src={images.npmLogo} width="100%" alt="npm logo" />
           </Slide>
 
           <Slide>
@@ -209,6 +238,64 @@ export default class Presentation extends React.Component {
 
           <Slide>
             <Heading>Tools</Heading>
+            <Appear>
+              <Image src={images.babelLogo} width="200px" alt="npm logo" />
+            </Appear>
+            <Appear>
+              <Image
+                src={images.webpackLogo}
+                width="200px"
+                alt="webpack logo"
+              />
+            </Appear>
+            <Appear>
+              <Image src={images.eslintLogo} width="200px" alt="eslint logo" />
+            </Appear>
+            <Appear>
+              <Image src={images.jestLogo} width="200px" alt="jest logo" />
+            </Appear>
+          </Slide>
+
+
+          <Slide>
+            <Appear>
+              <Image
+                src={images.overflow}
+                width="100%"
+                alt="Too much food in small container"
+              />
+            </Appear>
+          </Slide>
+
+          <Slide>
+            <Appear>
+              <Image
+                src={images.darkSideCookies}
+                width="100%"
+                alt="Come to the dark side, we have cookies"
+              />
+            </Appear>
+          </Slide>
+
+          <Slide>
+            <Heading>Resources</Heading>
+            <List>
+              {[
+                { link: 'https://www.npmjs.com/', display: 'npm' },
+                { link: 'https://webpack.js.org/', display: 'webpack' },
+                { link: 'https://babeljs.io/', display: 'babel' },
+                {
+                  link:
+                    'https://facebook.github.io/jest/docs/en/getting-started.html',
+                  display: 'jest',
+                },
+                { link: 'hthttps://eslint.org/', display: 'eslint' },
+              ].map(item => (
+                <ListItem>
+                  <Link href={item.link}>{item.display}</Link>
+                </ListItem>
+              ))}
+            </List>
           </Slide>
 
           <Slide
