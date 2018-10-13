@@ -1,12 +1,12 @@
 import React from 'react';
 import { Appear, ListItem, List } from 'spectacle';
 
-const AppearList = ({ items, textColor, textSize = 42, style }) => (
-  <List textColor={textColor} style={{ listStyleType: 'none', ...style }}>
+const AppearList = ({ items, textColor, textSize = 42, listStyleType = 'none', style = {} }) => (
+  <List textColor={textColor} style={{ listStyleType, ...style }}>
     {items.map((val, i) => (
       <Appear key={i}>
         <ListItem style={{ fontSize: textSize, margin: '.5rem' }}>
-          - {val}
+          {listStyleType === 'none' ? '-' : ''} {val}
         </ListItem>
       </Appear>
     ))}

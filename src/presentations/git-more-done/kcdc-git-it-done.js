@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
+import { TwitterTweetEmbed } from 'react-twitter-embed';
 import {
   Deck,
   Slide,
@@ -221,30 +222,12 @@ export default class Presentation extends React.Component {
             </Layout>
           </Slide>
 
-          <Slide>
-            <blockquote className="twitter-tweet" data-lang="en">
-              <div>
-                <video
-                  preload="none"
-                  autoPlay={true}
-                  poster="https://pbs.twimg.com/tweet_video_thumb/DhcaK92W4AkAMbR.jpg"
-                  src="https://video.twimg.com/tweet_video/DhcaK92W4AkAMbR.mp4"
-                  type="video/mp4"
-                />
-              </div>
-              <p lang="en" dir="ltr">
-                🖥 Visualization of git merge<br />
-                <br />🤔 I wonder what the guy bypassing everyone at the end is
-                thinking
-              </p>&mdash; 𝙴𝚕𝚒𝚓𝚊𝚑 𝙼𝚊𝚗𝚘𝚛 (@elijahmanor)
-              <a href="https://twitter.com/elijahmanor/status/1015309250602635264?ref_src=twsrc%5Etfw">
-                July 6, 2018
-              </a>
-            </blockquote>
-            <script
-              async
-              src="https://platform.twitter.com/widgets.js"
-              charSet="utf-8"
+          <Slide bgColor="codePaneBg">
+            <TwitterTweetEmbed
+              tweetId={'1015309250602635264'}
+              options={{
+                align: 'center',
+              }}
             />
           </Slide>
 
