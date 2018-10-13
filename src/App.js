@@ -21,6 +21,7 @@ import {
 import {
   RC_ComponentSlides,
   KCDC_ComponentSlides as KCDC_GMD_ComponentSlides,
+  CCC_ComponentSlides,
 } from './presentations/git-more-done';
 import { SCS_JavaScriptEcosystemSlides } from './presentations/modern-javascript';
 
@@ -114,6 +115,13 @@ const talks = [
     component: SCS_JavaScriptEcosystemSlides,
     title: SCS_JavaScriptEcosystemSlides.title,
   },
+  {
+    key: 'ccc-git-more-done',
+    conference: 'Cream City Code',
+    year: 2018,
+    component: CCC_ComponentSlides,
+    title: CCC_ComponentSlides.title,
+  }
 ];
 
 class App extends Component {
