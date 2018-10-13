@@ -418,7 +418,12 @@ export default class Presentation extends React.Component {
             <Heading fit>Further Extention</Heading>
             <Layout>
               <AppearList
-                items={['Slack Bots', 'Auto-versioning', 'Greenkeeper']}
+                items={[
+                  'Slack Bots',
+                  'Auto-versioning',
+                  'Greenkeeper',
+                  'Deployment',
+                ]}
               />
             </Layout>
           </Slide>
