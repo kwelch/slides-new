@@ -35,6 +35,8 @@ const images = {
   sadWindow: require('./assets/sad-window.gif'),
   oneHour: require('./assets/one-hour-later.jpg'),
 
+  npmLogo: require('./assets/npm-logo.png'),
+
   logoNode: require('./assets/node-logo.svg'),
   logoWebpack: require('./assets/webpack.svg'),
   logoChai: require('./assets/chai.png'),
@@ -184,7 +186,63 @@ export default class Presentation extends React.Component {
             <Heading>De-mystifying JavaScript</Heading>
           </Slide>
 
-          
+          <Slide>
+            <Image src={images.npmLogo} width="300px" atl="npm" />
+            <AppearList
+              items={[
+                <span>Dependency Management<br/>(🤔 think Nuget or pip)</span>,
+                'No more vendors folder',
+                <span>More easily share code<br/>(🏢 internally and 🌎 publicly)</span>,
+              ]}
+            />
+          </Slide>
+          <Slide>
+            <Heading>Jest</Heading>
+            <Image src={images.logoJest} height="150px" alt="jest logo" />
+            <AppearList
+              items={[
+                'Testing!!! 🎉',
+                'Build with confidence'
+              ]}
+            />
+          </Slide>
+          <Slide>
+            <Image src={images.logoBabel} height="150px" alt="babel logo" />
+            <AppearList
+              items={[
+                'Compiler/Transpiler',
+                'No more waiting for browser support 🌐'
+              ]}
+            />
+          </Slide>
+          <Slide>
+            <Image src={images.logoWebpack} height="150px" alt="webpack logo" />
+            <AppearList
+              items={[
+                'Bundler',
+                'Pack modules into assets 📦'
+              ]}
+            />
+          </Slide>
+          <Slide>
+            <Image src={images.logoEslint} height="150px" alt="eslint logo" />
+            <AppearList
+              items={[
+                'Pattern/Convention Checker',
+                'Find code errors/problems earlier',
+                'Enforce consistent & style guidelines'
+              ]}
+            />
+          </Slide>
+          <Slide>
+            <Image src={images.logoPrettier} height="150px" alt="prettier logo" />
+            <AppearList
+              items={[
+                'Code Formatter',
+                'Reverse of Uglify'
+              ]}
+            />
+          </Slide>
         </Deck>
       </DeckWrapper>
     );
