@@ -1,6 +1,16 @@
 import React from 'react';
-import { Deck, Slide, Heading, Text, Image, Appear, CodePane } from 'spectacle';
-import CodeSlide from 'spectacle-code-slide';
+import {
+  Deck,
+  Slide,
+  Heading,
+  Text,
+  Image,
+  Appear,
+  CodePane,
+  Link,
+  Layout,
+  Fill,
+} from 'spectacle';
 import { TwitterTweetEmbed } from 'react-twitter-embed';
 import TitleHeader from '../../components/TitleHeader';
 import TwitterFooter from '../../components/TwitterFooter';
@@ -177,7 +187,12 @@ export default class Presentation extends React.Component {
               {Object.keys(images)
                 .filter(name => name.startsWith('logo'))
                 .map(imageKey => {
-                  return <Image src={images[imageKey]} style={{ flex: '0 1 auto', maxHeight: "150px" }} />;
+                  return (
+                    <Image
+                      src={images[imageKey]}
+                      style={{ flex: '0 1 auto', maxHeight: '150px' }}
+                    />
+                  );
                 })}
             </div>
           </Slide>
@@ -190,39 +205,37 @@ export default class Presentation extends React.Component {
             <Image src={images.npmLogo} width="300px" atl="npm" />
             <AppearList
               items={[
-                <span>Dependency Management<br/>(🤔 think Nuget or pip)</span>,
+                <span>
+                  Dependency Management
+                  <br />
+                  (🤔 think Nuget or pip)
+                </span>,
                 'No more vendors folder',
-                <span>More easily share code<br/>(🏢 internally and 🌎 publicly)</span>,
+                <span>
+                  More easily share code
+                  <br />
+                  (🏢 internally and 🌎 publicly)
+                </span>,
               ]}
             />
           </Slide>
           <Slide>
             <Heading>Jest</Heading>
             <Image src={images.logoJest} height="150px" alt="jest logo" />
-            <AppearList
-              items={[
-                'Testing!!! 🎉',
-                'Build with confidence'
-              ]}
-            />
+            <AppearList items={['Testing!!! 🎉', 'Build with confidence']} />
           </Slide>
           <Slide>
             <Image src={images.logoBabel} height="150px" alt="babel logo" />
             <AppearList
               items={[
                 'Compiler/Transpiler',
-                'No more waiting for browser support 🌐'
+                'No more waiting for browser support 🌐',
               ]}
             />
           </Slide>
           <Slide>
             <Image src={images.logoWebpack} height="150px" alt="webpack logo" />
-            <AppearList
-              items={[
-                'Bundler',
-                'Pack modules into assets 📦'
-              ]}
-            />
+            <AppearList items={['Bundler', 'Pack modules into assets 📦']} />
           </Slide>
           <Slide>
             <Image src={images.logoEslint} height="150px" alt="eslint logo" />
@@ -230,18 +243,66 @@ export default class Presentation extends React.Component {
               items={[
                 'Pattern/Convention Checker',
                 'Find code errors/problems earlier',
-                'Enforce consistent & style guidelines'
+                'Enforce consistent & style guidelines',
               ]}
             />
           </Slide>
           <Slide>
-            <Image src={images.logoPrettier} height="150px" alt="prettier logo" />
-            <AppearList
-              items={[
-                'Code Formatter',
-                'Reverse of Uglify'
-              ]}
+            <Image
+              src={images.logoPrettier}
+              height="150px"
+              alt="prettier logo"
             />
+            <AppearList items={['Code Formatter', 'Reverse of Uglify']} />
+          </Slide>
+
+          <Slide
+            bgColor="drawingBg"
+            transition={['slide']}
+            style={{
+              backgroundRepeat: 'no-repeat',
+              backgroundPosition: 'center center',
+              backgroundSize: 'contain',
+              backgroundImage: `url(${images.about})`,
+            }}
+          />
+
+          <Slide transition={['zoom']} bgColor="primary">
+            <Heading size={1} fit caps lineHeight={1} textColor="secondary">
+              Thank You!
+            </Heading>
+            <Text margin="5rem 0 0" textColor="tertiary" size={3} bold>
+              Kyle Welch
+            </Text>
+            <Link
+              href="https://slides.krwelch.com/sks-tame-js"
+              margin=".5rem 0 0"
+              textColor="tertiary"
+              size={0.75}
+              italic
+            >
+              https://slides.krwelch.com/sks-tame-js
+            </Link>
+            <Layout style={{ marginTop: 100, justifyContent: 'space-between' }}>
+              <Fill>
+                <Text textColor="tertiary" style={{ textAlign: 'left' }}>
+                  <Image
+                    src={images.twitterLogo}
+                    style={{ height: 25, margin: '0 10px 0' }}
+                  />
+                  @kylewelch
+                </Text>
+              </Fill>
+              <Fill>
+                <Text style={{ textAlign: 'right' }}>
+                  <Image
+                    src={images.githubLogo}
+                    style={{ height: 30, margin: '0 10px 0' }}
+                  />
+                  /kwelch
+                </Text>
+              </Fill>
+            </Layout>
           </Slide>
         </Deck>
       </DeckWrapper>
