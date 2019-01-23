@@ -256,6 +256,19 @@ export default class Presentation extends React.Component {
             <AppearList items={['Code Formatter', 'Reverse of Uglify']} />
           </Slide>
 
+          <Slide bgColor={'quartenary'}>
+            <Heading textColor={'tertiary'}>
+              What made me love JS again?
+            </Heading>
+          </Slide>
+
+          <Slide>
+            <Heading>React</Heading>
+            <Image src={images.logoReact} height="150px" alt="react logo" />
+
+            <CodePane source="npx create-react-app <app-name>" lang="bash" />
+          </Slide>
+
           <Slide
             bgColor="drawingBg"
             transition={['slide']}
