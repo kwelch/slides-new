@@ -46,31 +46,13 @@ const images = {
   oneHour: require('./assets/one-hour-later.jpg'),
 
   npmLogo: require('./assets/npm-logo.png'),
-
-  logoNode: require('./assets/node-logo.svg'),
-  logoWebpack: require('./assets/webpack.svg'),
-  logoChai: require('./assets/chai.png'),
-  logoAngular: require('./assets/angular.png'),
-  logoGatsby: require('./assets/gatsby.svg'),
-  logoNPM: require('./assets/npm.png'),
-  logoZeit: require('./assets/zeit.png'),
-  logoStyledComponents: require('./assets/styled-components.png'),
-  logoVue: require('./assets/vue.png'),
-  logoGraphQL: require('./assets/graphql.png'),
-  logoEmber: require('./assets/ember.png'),
-  logoMocha: require('./assets/mocha.svg'),
-  logoGulp: require('./assets/gulp.png'),
-  logoBrowserify: require('./assets/browserify.png'),
+  tenYearJS: require('./assets/10yearJS.png'),
   logoBabel: require('./assets/babel.png'),
   logoEslint: require('./assets/eslint-logo.jpg'),
-  logoRedux: require('./assets/redux.png'),
   logoReact: require('./assets/react.svg'),
   logoJest: require('./assets/jest.png'),
-  logoGrunt: require('./assets/grunt.svg'),
-  logoNetlify: require('./assets/netlify.jpeg'),
   logoPrettier: require('./assets/prettier.png'),
   logoWebpack: require('./assets/webpack-logo.png'),
-  logoEmotion: require('./assets/emotion.png'),
 };
 
 preloader(images);
@@ -150,6 +132,16 @@ export default class Presentation extends React.Component {
             <CodePane source={ogJSExample} lang="js" textSize="24" />
           </Slide>
 
+          <Slide>
+            <Heading>I hated web development</Heading>
+            <br />
+            <Appear>
+              <Heading fit textColor={'secondary'}>
+                I loved building APIs and tools for developers
+              </Heading>
+            </Appear>
+          </Slide>
+
           <Slide bgColor="codePaneBg">
             <TwitterTweetEmbed
               tweetId={'1087397595012464640'}
@@ -171,30 +163,14 @@ export default class Presentation extends React.Component {
             />
           </Slide>
 
-          <Slide bgColor={'codePaneBg'}>
-            <div
-              style={{
-                margin: 0,
-                marginLeft: '-12vw',
-                width: '80vw',
-                display: 'flex',
-                flexDirection: 'row',
-                flexWrap: 'wrap',
-                justifyContent: 'space-around',
-                alignItems: 'baseline',
-              }}
-            >
-              {Object.keys(images)
-                .filter(name => name.startsWith('logo'))
-                .map(imageKey => {
-                  return (
-                    <Image
-                      src={images[imageKey]}
-                      style={{ flex: '0 1 auto', maxHeight: '150px' }}
-                    />
-                  );
-                })}
-            </div>
+          <Slide bgColor={'drawingBg'}>
+            <Heading fit textColor={'quartenary'}>
+              JS #10YearChallenge
+            </Heading>
+            <Image
+              src={images.tenYearJS}
+              style={{ margin: 0, marginLeft: '-10rem' }}
+            />
           </Slide>
 
           <Slide>
@@ -255,7 +231,7 @@ export default class Presentation extends React.Component {
             />
             <AppearList items={['Code Formatter', 'Reverse of Uglify']} />
           </Slide>
-
+          
           <Slide bgColor={'quartenary'}>
             <Heading textColor={'tertiary'}>
               What made me love JS again?
@@ -267,6 +243,16 @@ export default class Presentation extends React.Component {
             <Image src={images.logoReact} height="150px" alt="react logo" />
 
             <CodePane source="npx create-react-app <app-name>" lang="bash" />
+          </Slide>
+
+          <Slide bgColor={'codePaneBg'}>
+            <TwitterTweetEmbed
+              tweetId={'955551905928941568'}
+              options={{
+                align: 'center',
+              }}
+              style={{ marginTop: '-5rem' }}
+            />
           </Slide>
 
           <Slide
