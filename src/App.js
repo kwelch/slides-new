@@ -23,7 +23,7 @@ import {
   KCDC_ComponentSlides as KCDC_GMD_ComponentSlides,
   CCC_ComponentSlides,
 } from './presentations/git-more-done';
-import { SCS_JavaScriptEcosystemSlides } from './presentations/modern-javascript';
+import { SCS_JavaScriptEcosystemSlides, SKS_TameJavaScriptEcosystemSlides } from './presentations/modern-javascript';
 
 const groupBy = list => key =>
   list.reduce((acc, curr) => {
@@ -114,6 +114,13 @@ const talks = [
     year: 2018,
     component: SCS_JavaScriptEcosystemSlides,
     title: SCS_JavaScriptEcosystemSlides.title,
+  },
+  {
+    key: 'sks-tame-js',
+    conference: 'Swift Kick',
+    year: 2019,
+    component: SKS_TameJavaScriptEcosystemSlides,
+    title: SKS_TameJavaScriptEcosystemSlides.title,
   },
   {
     key: 'ccc-git-more-done',
